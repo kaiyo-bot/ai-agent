@@ -1758,7 +1758,7 @@ bot.hears(buttonText(BUTTON.admin), async ctx => {
 
 
 
-bot.hears(buttonText(BUTTON.main), async ctx => {
+bot.hears(/^(?:🏠 )?Main Menu$/, async ctx => {
   const id = String(ctx.from.id);
   users[id] = { ...(users[id] || {}), state: null };
   persist();
