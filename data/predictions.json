@@ -1,0 +1,5038 @@
+{
+  "8363334219_1788902194490_ac1e4df2": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 2,
+    "prediction": "BIG",
+    "predictedPeriod": "20260908100011277",
+    "createdAt": "2026-09-08T21:16:34.491Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        11,
+        16,
+        12,
+        18,
+        8,
+        12,
+        17,
+        14,
+        15,
+        16
+      ],
+      "pct": [
+        7.913669064748201,
+        11.510791366906474,
+        8.633093525179856,
+        12.949640287769784,
+        5.755395683453237,
+        8.633093525179856,
+        12.23021582733813,
+        10.071942446043165,
+        10.79136690647482,
+        11.510791366906474
+      ],
+      "bigPct": 53.23741007194245,
+      "smallPct": 46.76258992805755,
+      "sample": 139
+    },
+    "resolvedAt": "2026-09-08T21:21:06.067Z",
+    "result": {
+      "period": "20260908100011277",
+      "number": 5
+    }
+  },
+  "8363334219_1788902493811_6185f64a": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 8,
+    "inputNew": 6,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260908100011282",
+    "createdAt": "2026-09-08T21:21:33.811Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        3,
+        5,
+        0,
+        3,
+        2,
+        2,
+        3,
+        0,
+        2,
+        3
+      ],
+      "pct": [
+        13.043478260869565,
+        21.73913043478261,
+        0,
+        13.043478260869565,
+        8.695652173913043,
+        8.695652173913043,
+        13.043478260869565,
+        0,
+        8.695652173913043,
+        13.043478260869565
+      ],
+      "bigPct": 43.47826086956522,
+      "smallPct": 56.52173913043478,
+      "sample": 23
+    },
+    "resolvedAt": "2026-09-08T21:21:57.322Z",
+    "result": null
+  },
+  "8363334219_1788902798552_e9c88681": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 6,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260908100011287",
+    "createdAt": "2026-09-08T21:26:38.552Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        25,
+        25,
+        12,
+        20,
+        23,
+        15,
+        22,
+        15,
+        18,
+        20
+      ],
+      "pct": [
+        12.820512820512821,
+        12.820512820512821,
+        6.153846153846154,
+        10.256410256410257,
+        11.794871794871796,
+        7.6923076923076925,
+        11.282051282051283,
+        7.6923076923076925,
+        9.23076923076923,
+        10.256410256410257
+      ],
+      "bigPct": 46.15384615384615,
+      "smallPct": 53.84615384615385,
+      "sample": 195
+    },
+    "resolvedAt": "2026-09-08T21:26:51.558Z",
+    "result": null
+  },
+  "8363334219_1788903353129_2360a087": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 7,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "20260908100011296",
+    "createdAt": "2026-09-08T21:35:53.130Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        177,
+        183,
+        136,
+        187,
+        152,
+        166,
+        195,
+        147,
+        172,
+        185
+      ],
+      "pct": [
+        10.41,
+        10.76,
+        8,
+        11,
+        8.94,
+        9.76,
+        11.47,
+        8.65,
+        10.12,
+        10.88
+      ],
+      "bigPct": 50.88,
+      "smallPct": 49.12,
+      "sample": 1700
+    }
+  },
+  "8363334219_1788903398318_57030450": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 7,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "20260908100011297",
+    "createdAt": "2026-09-08T21:36:38.318Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        177,
+        183,
+        136,
+        187,
+        152,
+        166,
+        195,
+        147,
+        172,
+        185
+      ],
+      "pct": [
+        10.41,
+        10.76,
+        8,
+        11,
+        8.94,
+        9.76,
+        11.47,
+        8.65,
+        10.12,
+        10.88
+      ],
+      "bigPct": 50.88,
+      "smallPct": 49.12,
+      "sample": 1700
+    },
+    "resolvedAt": "2026-09-08T21:37:00.522Z",
+    "result": null
+  },
+  "8363334219_1788903566700_fa2d77fd": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "20260908100011300",
+    "createdAt": "2026-09-08T21:39:26.700Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        176,
+        182,
+        135,
+        186,
+        153,
+        166,
+        194,
+        147,
+        172,
+        189
+      ],
+      "pct": [
+        10.35,
+        10.71,
+        7.94,
+        10.94,
+        9,
+        9.76,
+        11.41,
+        8.65,
+        10.12,
+        11.12
+      ],
+      "bigPct": 51.06,
+      "smallPct": 48.94,
+      "sample": 1700
+    },
+    "resolvedAt": "2026-09-08T21:39:43.130Z",
+    "result": null
+  },
+  "8363334219_1788903598255_7860ff52": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "20260908100011300",
+    "createdAt": "2026-09-08T21:39:58.255Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        175,
+        182,
+        135,
+        185,
+        153,
+        166,
+        195,
+        146,
+        172,
+        191
+      ],
+      "pct": [
+        10.29,
+        10.71,
+        7.94,
+        10.88,
+        9,
+        9.76,
+        11.47,
+        8.59,
+        10.12,
+        11.24
+      ],
+      "bigPct": 51.18,
+      "smallPct": 48.82,
+      "sample": 1700
+    }
+  },
+  "8363334219_1788903608554_23eef7a1": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 2,
+    "prediction": "BIG",
+    "predictedPeriod": "20260908100011301",
+    "createdAt": "2026-09-08T21:40:08.554Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        175,
+        182,
+        135,
+        185,
+        153,
+        166,
+        195,
+        146,
+        172,
+        191
+      ],
+      "pct": [
+        10.29,
+        10.71,
+        7.94,
+        10.88,
+        9,
+        9.76,
+        11.47,
+        8.59,
+        10.12,
+        11.24
+      ],
+      "bigPct": 51.18,
+      "smallPct": 48.82,
+      "sample": 1700
+    }
+  },
+  "8363334219_1788903624459_e1cae59d": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 9,
+    "inputNew": 5,
+    "prediction": "BIG",
+    "predictedPeriod": "20260908100011301",
+    "createdAt": "2026-09-08T21:40:24.459Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        175,
+        182,
+        135,
+        185,
+        153,
+        166,
+        195,
+        146,
+        172,
+        191
+      ],
+      "pct": [
+        10.29,
+        10.71,
+        7.94,
+        10.88,
+        9,
+        9.76,
+        11.47,
+        8.59,
+        10.12,
+        11.24
+      ],
+      "bigPct": 51.18,
+      "smallPct": 48.82,
+      "sample": 1700
+    }
+  },
+  "8363334219_1788930297792_5af96ec1": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 1,
+    "inputNew": 9,
+    "prediction": "BIG",
+    "predictedPeriod": "20260909100010305",
+    "createdAt": "2026-09-09T05:04:57.793Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        175,
+        182,
+        135,
+        185,
+        153,
+        166,
+        195,
+        146,
+        172,
+        191
+      ],
+      "pct": [
+        10.29,
+        10.71,
+        7.94,
+        10.88,
+        9,
+        9.76,
+        11.47,
+        8.59,
+        10.12,
+        11.24
+      ],
+      "bigPct": 51.18,
+      "smallPct": 48.82,
+      "sample": 1700
+    },
+    "resolvedAt": "2026-09-09T05:05:11.993Z",
+    "result": {
+      "period": "20260909100010305",
+      "number": 2
+    }
+  },
+  "8363334219_1788930433479_65caac93": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "20260909100010308",
+    "createdAt": "2026-09-09T05:07:13.479Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        178,
+        183,
+        124,
+        197,
+        160,
+        168,
+        175,
+        154,
+        171,
+        190
+      ],
+      "pct": [
+        10.47,
+        10.76,
+        7.29,
+        11.59,
+        9.41,
+        9.88,
+        10.29,
+        9.06,
+        10.06,
+        11.18
+      ],
+      "bigPct": 50.47,
+      "smallPct": 49.53,
+      "sample": 1700
+    },
+    "resolvedAt": "2026-09-09T05:07:17.958Z",
+    "result": null
+  },
+  "8363334219_1788930444735_45e42593": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "20260909100010308",
+    "createdAt": "2026-09-09T05:07:24.735Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        177,
+        183,
+        126,
+        197,
+        160,
+        167,
+        175,
+        154,
+        171,
+        190
+      ],
+      "pct": [
+        10.41,
+        10.76,
+        7.41,
+        11.59,
+        9.41,
+        9.82,
+        10.29,
+        9.06,
+        10.06,
+        11.18
+      ],
+      "bigPct": 50.41,
+      "smallPct": 49.59,
+      "sample": 1700
+    },
+    "resolvedAt": "2026-09-09T05:12:49.248Z",
+    "result": {
+      "period": "20260909100010308",
+      "number": 2
+    }
+  },
+  "8363334219_1788930776415_98e10ae4": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 9,
+    "prediction": "BIG",
+    "predictedPeriod": "20260909100010313",
+    "createdAt": "2026-09-09T05:12:56.416Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        20,
+        18,
+        13,
+        22,
+        16,
+        20,
+        18,
+        19,
+        19,
+        24
+      ],
+      "pct": [
+        10.58,
+        9.52,
+        6.88,
+        11.64,
+        8.47,
+        10.58,
+        9.52,
+        10.05,
+        10.05,
+        12.7
+      ],
+      "bigPct": 52.91,
+      "smallPct": 47.09,
+      "sample": 189
+    },
+    "resolvedAt": "2026-09-09T05:13:09.598Z",
+    "result": {
+      "period": "20260909100010313",
+      "number": 8
+    }
+  },
+  "8363334219_1788930793562_f335a707": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "20260909100010314",
+    "createdAt": "2026-09-09T05:13:13.563Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        13,
+        26,
+        9,
+        14,
+        13,
+        18,
+        20,
+        17,
+        22,
+        24
+      ],
+      "pct": [
+        7.39,
+        14.77,
+        5.11,
+        7.95,
+        7.39,
+        10.23,
+        11.36,
+        9.66,
+        12.5,
+        13.64
+      ],
+      "bigPct": 57.39,
+      "smallPct": 42.61,
+      "sample": 176
+    }
+  },
+  "8363334219_1788930808884_ca6682f9": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 1,
+    "prediction": "BIG",
+    "predictedPeriod": "20260909100010314",
+    "createdAt": "2026-09-09T05:13:28.885Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        2,
+        1,
+        0,
+        6,
+        1,
+        4,
+        3,
+        1,
+        2,
+        1
+      ],
+      "pct": [
+        9.52,
+        4.76,
+        0,
+        28.57,
+        4.76,
+        19.05,
+        14.29,
+        4.76,
+        9.52,
+        4.76
+      ],
+      "bigPct": 52.38,
+      "smallPct": 47.62,
+      "sample": 21
+    }
+  },
+  "8363334219_1788930819003_cf13374d": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 2,
+    "prediction": "BIG",
+    "predictedPeriod": "20260909100010314",
+    "createdAt": "2026-09-09T05:13:39.004Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        14,
+        14,
+        12,
+        11,
+        11,
+        8,
+        7,
+        15,
+        20,
+        14
+      ],
+      "pct": [
+        11.11,
+        11.11,
+        9.52,
+        8.73,
+        8.73,
+        6.35,
+        5.56,
+        11.9,
+        15.87,
+        11.11
+      ],
+      "bigPct": 50.79,
+      "smallPct": 49.21,
+      "sample": 126
+    }
+  },
+  "8363334219_1788930827199_d4a34905": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 3,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260909100010314",
+    "createdAt": "2026-09-09T05:13:47.199Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        1,
+        6,
+        4,
+        4,
+        5,
+        1,
+        2,
+        0,
+        2,
+        3
+      ],
+      "pct": [
+        3.57,
+        21.43,
+        14.29,
+        14.29,
+        17.86,
+        3.57,
+        7.14,
+        0,
+        7.14,
+        10.71
+      ],
+      "bigPct": 28.57,
+      "smallPct": 71.43,
+      "sample": 28
+    }
+  },
+  "8363334219_1788930839694_61d7f098": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 4,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260909100010315",
+    "createdAt": "2026-09-09T05:13:59.695Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        2,
+        2,
+        1,
+        6,
+        1,
+        5,
+        2,
+        2,
+        2,
+        1
+      ],
+      "pct": [
+        8.33,
+        8.33,
+        4.17,
+        25,
+        4.17,
+        20.83,
+        8.33,
+        8.33,
+        8.33,
+        4.17
+      ],
+      "bigPct": 50,
+      "smallPct": 50,
+      "sample": 24
+    }
+  },
+  "8363334219_1788931377575_0489a807": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 7,
+    "inputNew": 9,
+    "prediction": "BIG",
+    "predictedPeriod": "20260909100010323",
+    "createdAt": "2026-09-09T05:22:57.576Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        1,
+        1,
+        3,
+        1,
+        4,
+        4,
+        3,
+        0,
+        3,
+        3
+      ],
+      "pct": [
+        4.35,
+        4.35,
+        13.04,
+        4.35,
+        17.39,
+        17.39,
+        13.04,
+        0,
+        13.04,
+        13.04
+      ],
+      "bigPct": 56.52,
+      "smallPct": 43.48,
+      "sample": 23
+    }
+  },
+  "8363334219_1788931389338_f3d225bf": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 5,
+    "inputNew": 0,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260909100010324",
+    "createdAt": "2026-09-09T05:23:09.339Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        20,
+        20,
+        7,
+        22,
+        20,
+        21,
+        24,
+        15,
+        16,
+        12
+      ],
+      "pct": [
+        11.3,
+        11.3,
+        3.95,
+        12.43,
+        11.3,
+        11.86,
+        13.56,
+        8.47,
+        9.04,
+        6.78
+      ],
+      "bigPct": 49.72,
+      "smallPct": 50.28,
+      "sample": 177
+    }
+  },
+  "8363334219_1788931405029_047a29b9": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 1,
+    "inputNew": 7,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260909100010324",
+    "createdAt": "2026-09-09T05:23:25.030Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        21,
+        14,
+        14,
+        17,
+        12,
+        9,
+        14,
+        14,
+        17,
+        23
+      ],
+      "pct": [
+        13.55,
+        9.03,
+        9.03,
+        10.97,
+        7.74,
+        5.81,
+        9.03,
+        9.03,
+        10.97,
+        14.84
+      ],
+      "bigPct": 49.68,
+      "smallPct": 50.32,
+      "sample": 155
+    }
+  },
+  "8363334219_1788931415211_35915132": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 5,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "20260909100010324",
+    "createdAt": "2026-09-09T05:23:35.211Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        13,
+        26,
+        9,
+        14,
+        13,
+        18,
+        20,
+        17,
+        22,
+        24
+      ],
+      "pct": [
+        7.39,
+        14.77,
+        5.11,
+        7.95,
+        7.39,
+        10.23,
+        11.36,
+        9.66,
+        12.5,
+        13.64
+      ],
+      "bigPct": 57.39,
+      "smallPct": 42.61,
+      "sample": 176
+    }
+  },
+  "8363334219_1788931429423_4ea9ecfe": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 6,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260909100010324",
+    "createdAt": "2026-09-09T05:23:49.424Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        3,
+        2,
+        2,
+        3,
+        2,
+        2,
+        1,
+        4,
+        1,
+        2
+      ],
+      "pct": [
+        13.64,
+        9.09,
+        9.09,
+        13.64,
+        9.09,
+        9.09,
+        4.55,
+        18.18,
+        4.55,
+        9.09
+      ],
+      "bigPct": 45.45,
+      "smallPct": 54.55,
+      "sample": 22
+    }
+  },
+  "8363334219_1788933721233_508c8406": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 6,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260909100010363",
+    "createdAt": "2026-09-09T06:02:01.233Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        3,
+        2,
+        3,
+        3,
+        2,
+        2,
+        1,
+        4,
+        2,
+        2
+      ],
+      "pct": [
+        12.5,
+        8.33,
+        12.5,
+        12.5,
+        8.33,
+        8.33,
+        4.17,
+        16.67,
+        8.33,
+        8.33
+      ],
+      "bigPct": 45.83,
+      "smallPct": 54.17,
+      "sample": 24
+    },
+    "resolvedAt": "2026-09-09T06:04:05.260Z",
+    "result": {
+      "period": "20260909100010363",
+      "number": 9
+    }
+  },
+  "8363334219_1788945971340_a8ca255d": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "SMALL",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T09:26:11.340Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        0,
+        1,
+        1,
+        2,
+        2,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "pct": [
+        0,
+        10,
+        10,
+        20,
+        20,
+        20,
+        0,
+        10,
+        0,
+        10
+      ],
+      "bigPct": 40,
+      "smallPct": 60,
+      "sample": 10
+    }
+  },
+  "8363334219_1788952712855_8f2566c3": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 0,
+    "inputNew": 7,
+    "prediction": "BIG",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T11:18:32.855Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        21,
+        15,
+        14,
+        17,
+        12,
+        9,
+        15,
+        13,
+        19,
+        24
+      ],
+      "pct": [
+        13.21,
+        9.43,
+        8.81,
+        10.69,
+        7.55,
+        5.66,
+        9.43,
+        8.18,
+        11.95,
+        15.09
+      ],
+      "bigPct": 50.31,
+      "smallPct": 49.69,
+      "sample": 159
+    },
+    "resolvedAt": "2026-09-09T11:19:59.412Z",
+    "result": null
+  },
+  "8363334219_1788952809305_79523280": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 9,
+    "inputNew": 5,
+    "prediction": "BIG",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T11:20:09.306Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        3,
+        0,
+        1,
+        3,
+        1,
+        3,
+        0,
+        1,
+        4,
+        4
+      ],
+      "pct": [
+        15,
+        0,
+        5,
+        15,
+        5,
+        15,
+        0,
+        5,
+        20,
+        20
+      ],
+      "bigPct": 60,
+      "smallPct": 40,
+      "sample": 20
+    },
+    "resolvedAt": "2026-09-09T11:20:19.037Z",
+    "result": null
+  },
+  "8363334219_1788952826563_5b5ee52f": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 1,
+    "inputNew": 9,
+    "prediction": "BIG",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T11:20:26.563Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        4,
+        2,
+        0,
+        0,
+        0,
+        2,
+        1,
+        1,
+        3,
+        7
+      ],
+      "pct": [
+        20,
+        10,
+        0,
+        0,
+        0,
+        10,
+        5,
+        5,
+        15,
+        35
+      ],
+      "bigPct": 70,
+      "smallPct": 30,
+      "sample": 20
+    }
+  },
+  "8363334219_1788961061672_44f4c2e5": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 8,
+    "inputNew": 7,
+    "prediction": "BIG",
+    "predictedPeriod": "20260909100010818",
+    "createdAt": "2026-09-09T13:37:41.672Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        24,
+        12,
+        15,
+        18,
+        12,
+        10,
+        14,
+        13,
+        18,
+        29
+      ],
+      "total": 165,
+      "big": 84,
+      "small": 81
+    },
+    "resolvedAt": "2026-09-09T13:37:51.880Z",
+    "result": null
+  },
+  "8363334219_1788961078843_d4b9f09a": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 8,
+    "prediction": "BIG",
+    "predictedPeriod": "20260909100010818",
+    "createdAt": "2026-09-09T13:37:58.844Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        4,
+        1,
+        0,
+        4,
+        1,
+        5,
+        4,
+        1,
+        0,
+        3
+      ],
+      "total": 23,
+      "big": 13,
+      "small": 10
+    },
+    "resolvedAt": "2026-09-09T13:38:01.780Z",
+    "result": {
+      "period": "20260909100010818",
+      "number": 8
+    }
+  },
+  "8363334219_1788961087831_24058ebb": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 0,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260909100010819",
+    "createdAt": "2026-09-09T13:38:07.832Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        19,
+        23,
+        7,
+        24,
+        21,
+        13,
+        18,
+        17,
+        16,
+        12
+      ],
+      "total": 170,
+      "big": 76,
+      "small": 94
+    }
+  },
+  "8363334219_1788979549779_bf707750": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T18:45:49.779Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        12,
+        14,
+        12,
+        14,
+        21,
+        18,
+        19,
+        21,
+        19,
+        21
+      ],
+      "total": 171,
+      "big": 98,
+      "small": 73
+    },
+    "resolvedAt": "2026-09-09T18:45:57.564Z",
+    "result": null
+  },
+  "8363334219_1788979560388_18a6f7d7": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 6,
+    "prediction": "SMALL",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T18:46:00.388Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        19,
+        17,
+        16,
+        16,
+        21,
+        16,
+        17,
+        16,
+        19,
+        13
+      ],
+      "total": 170,
+      "big": 81,
+      "small": 89
+    },
+    "resolvedAt": "2026-09-09T18:46:08.764Z",
+    "result": null
+  },
+  "8363334219_1788979571261_e866df08": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 7,
+    "prediction": "SMALL",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T18:46:11.262Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        3,
+        1,
+        4,
+        2,
+        3,
+        3,
+        2,
+        0,
+        1,
+        2
+      ],
+      "total": 21,
+      "big": 8,
+      "small": 13
+    },
+    "resolvedAt": "2026-09-09T18:52:07.678Z",
+    "result": null
+  },
+  "8363334219_1788980122776_28db4a4f": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 2,
+    "prediction": "BIG",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T18:55:22.777Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        197,
+        158,
+        152,
+        170,
+        171,
+        165,
+        169,
+        173,
+        159,
+        186
+      ],
+      "total": 1700,
+      "big": 852,
+      "small": 848
+    },
+    "resolvedAt": "2026-09-09T18:55:31.317Z",
+    "result": null
+  },
+  "8363334219_1788980134442_d838346c": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T18:55:34.442Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        197,
+        158,
+        152,
+        170,
+        171,
+        165,
+        169,
+        173,
+        159,
+        186
+      ],
+      "total": 1700,
+      "big": 852,
+      "small": 848
+    },
+    "resolvedAt": "2026-09-09T18:55:38.313Z",
+    "result": null
+  },
+  "8363334219_1788980141191_2a9060c7": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 4,
+    "prediction": "SMALL",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T18:55:41.192Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        197,
+        158,
+        152,
+        170,
+        171,
+        165,
+        169,
+        173,
+        159,
+        186
+      ],
+      "total": 1700,
+      "big": 852,
+      "small": 848
+    }
+  },
+  "8363334219_1788980144873_956ed0ce": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 5,
+    "prediction": "BIG",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T18:55:44.874Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        197,
+        158,
+        152,
+        170,
+        171,
+        165,
+        169,
+        173,
+        159,
+        186
+      ],
+      "total": 1700,
+      "big": 852,
+      "small": 848
+    }
+  },
+  "8363334219_1788980151497_3ca509a9": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 6,
+    "prediction": "SMALL",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T18:55:51.497Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        197,
+        158,
+        152,
+        170,
+        171,
+        165,
+        169,
+        173,
+        159,
+        186
+      ],
+      "total": 1700,
+      "big": 852,
+      "small": 848
+    },
+    "resolvedAt": "2026-09-09T18:56:04.173Z",
+    "result": null
+  },
+  "8363334219_1788980169322_ec8b1e50": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 7,
+    "prediction": "BIG",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T18:56:09.323Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        197,
+        158,
+        152,
+        170,
+        171,
+        165,
+        169,
+        173,
+        159,
+        186
+      ],
+      "total": 1700,
+      "big": 852,
+      "small": 848
+    }
+  },
+  "8363334219_1788980174362_655f2547": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 8,
+    "prediction": "BIG",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T18:56:14.366Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        197,
+        158,
+        152,
+        170,
+        171,
+        165,
+        169,
+        173,
+        159,
+        186
+      ],
+      "total": 1700,
+      "big": 852,
+      "small": 848
+    }
+  },
+  "8363334219_1788980181404_cbe8e752": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 9,
+    "prediction": "BIG",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T18:56:21.405Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        197,
+        158,
+        152,
+        170,
+        171,
+        165,
+        169,
+        173,
+        159,
+        186
+      ],
+      "total": 1700,
+      "big": 852,
+      "small": 848
+    }
+  },
+  "8363334219_1788980184274_1be20405": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 0,
+    "prediction": "SMALL",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T18:56:24.275Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        197,
+        158,
+        152,
+        170,
+        171,
+        165,
+        169,
+        173,
+        159,
+        186
+      ],
+      "total": 1700,
+      "big": 852,
+      "small": 848
+    }
+  },
+  "8363334219_1788980188673_ab607192": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 1,
+    "prediction": "SMALL",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T18:56:28.674Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        198,
+        159,
+        152,
+        169,
+        171,
+        165,
+        169,
+        173,
+        159,
+        185
+      ],
+      "total": 1700,
+      "big": 851,
+      "small": 849
+    }
+  },
+  "8363334219_1788981645407_6dc7a851": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 8,
+    "prediction": "BIG",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T19:20:45.408Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        198,
+        159,
+        152,
+        169,
+        171,
+        165,
+        169,
+        173,
+        159,
+        185
+      ],
+      "total": 1700,
+      "big": 851,
+      "small": 849
+    }
+  },
+  "8363334219_1788981660125_9f032d92": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 6,
+    "prediction": "SMALL",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-09T19:21:00.127Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        198,
+        159,
+        152,
+        169,
+        171,
+        165,
+        169,
+        173,
+        159,
+        185
+      ],
+      "total": 1700,
+      "big": 851,
+      "small": 849
+    }
+  },
+  "8363334219_1788982578235_5190a67e": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": "20260909103011177",
+    "createdAt": "2026-09-09T19:36:18.235Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        198,
+        161,
+        153,
+        166,
+        165,
+        168,
+        165,
+        172,
+        164,
+        188
+      ],
+      "total": 1700,
+      "big": 857,
+      "small": 843
+    }
+  },
+  "8938808054_1789006803799_9cdf8b8d": {
+    "telegramId": "8938808054",
+    "game": "TRX",
+    "inputOld": 0,
+    "inputNew": 6,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010141",
+    "createdAt": "2026-09-10T02:20:03.799Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        198,
+        151,
+        159,
+        177,
+        157,
+        182,
+        170,
+        177,
+        163,
+        166
+      ],
+      "total": 1700,
+      "big": 858,
+      "small": 842
+    }
+  },
+  "8363334219_1789006865035_0a8be1f3": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-10T02:21:05.035Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        198,
+        152,
+        159,
+        176,
+        157,
+        182,
+        170,
+        177,
+        163,
+        166
+      ],
+      "total": 1700,
+      "big": 858,
+      "small": 842
+    },
+    "resolvedAt": "2026-09-10T02:21:13.037Z",
+    "result": null
+  },
+  "8363334219_1789006879572_538529af": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-10T02:21:19.573Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        198,
+        152,
+        159,
+        176,
+        157,
+        182,
+        170,
+        177,
+        163,
+        166
+      ],
+      "total": 1700,
+      "big": 858,
+      "small": 842
+    }
+  },
+  "8363334219_1789006884389_8392ef6d": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-10T02:21:24.390Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        198,
+        152,
+        159,
+        176,
+        157,
+        182,
+        170,
+        177,
+        163,
+        166
+      ],
+      "total": 1700,
+      "big": 858,
+      "small": 842
+    }
+  },
+  "8363334219_1789006887104_da970517": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 6,
+    "prediction": "SMALL",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-10T02:21:27.104Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        198,
+        152,
+        159,
+        176,
+        157,
+        182,
+        170,
+        177,
+        163,
+        166
+      ],
+      "total": 1700,
+      "big": 858,
+      "small": 842
+    }
+  },
+  "8363334219_1789007148585_4635e9d4": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 5,
+    "prediction": "BIG",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-10T02:25:48.588Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        198,
+        151,
+        158,
+        178,
+        157,
+        181,
+        170,
+        178,
+        163,
+        166
+      ],
+      "total": 1700,
+      "big": 858,
+      "small": 842
+    }
+  },
+  "8584780644_1789007162885_e07c1dde": {
+    "telegramId": "8584780644",
+    "game": "WINGO",
+    "inputOld": 0,
+    "inputNew": 3,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910100010147",
+    "createdAt": "2026-09-10T02:26:02.885Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        146,
+        173,
+        177,
+        188,
+        183,
+        154,
+        163,
+        172,
+        173,
+        171
+      ],
+      "total": 1700,
+      "big": 833,
+      "small": 867
+    },
+    "resolvedAt": "2026-09-10T02:26:24.709Z",
+    "result": null
+  },
+  "8363334219_1789007369588_c2d8fb25": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010146",
+    "createdAt": "2026-09-10T02:29:29.589Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        198,
+        152,
+        158,
+        177,
+        157,
+        181,
+        170,
+        179,
+        163,
+        165
+      ],
+      "total": 1700,
+      "big": 858,
+      "small": 842
+    }
+  },
+  "8363334219_1789007482795_7974ee93": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 8,
+    "inputNew": 7,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910100010152",
+    "createdAt": "2026-09-10T02:31:22.796Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        144,
+        174,
+        177,
+        188,
+        184,
+        154,
+        162,
+        172,
+        172,
+        173
+      ],
+      "total": 1700,
+      "big": 833,
+      "small": 867
+    },
+    "resolvedAt": "2026-09-10T02:32:10.127Z",
+    "result": {
+      "period": "20260910100010152",
+      "number": 7
+    }
+  },
+  "8363334219_1789007535866_7095b0b9": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 8,
+    "inputNew": 7,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910100010152",
+    "createdAt": "2026-09-10T02:32:15.867Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        144,
+        174,
+        177,
+        188,
+        184,
+        154,
+        162,
+        172,
+        172,
+        173
+      ],
+      "total": 1700,
+      "big": 833,
+      "small": 867
+    },
+    "resolvedAt": "2026-09-10T02:32:40.770Z",
+    "result": {
+      "period": "20260910100010152",
+      "number": 7
+    }
+  },
+  "8363334219_1789007565944_86f025ba": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 7,
+    "inputNew": 9,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100010152",
+    "createdAt": "2026-09-10T02:32:45.944Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        144,
+        174,
+        177,
+        188,
+        184,
+        154,
+        162,
+        172,
+        172,
+        173
+      ],
+      "total": 1700,
+      "big": 833,
+      "small": 867
+    }
+  },
+  "8363334219_1789007740441_334855d3": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 9,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100010152",
+    "createdAt": "2026-09-10T02:35:40.444Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        144,
+        174,
+        177,
+        188,
+        184,
+        154,
+        162,
+        172,
+        172,
+        173
+      ],
+      "total": 1700,
+      "big": 833,
+      "small": 867
+    }
+  },
+  "8363334219_1789007746512_9fea4a5a": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 2,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910100010152",
+    "createdAt": "2026-09-10T02:35:46.512Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        144,
+        174,
+        177,
+        188,
+        184,
+        154,
+        162,
+        172,
+        172,
+        173
+      ],
+      "total": 1700,
+      "big": 833,
+      "small": 867
+    }
+  },
+  "8363334219_1789007772132_7583d3a8": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910100010152",
+    "createdAt": "2026-09-10T02:36:12.132Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        144,
+        174,
+        177,
+        188,
+        184,
+        154,
+        162,
+        172,
+        172,
+        173
+      ],
+      "total": 1700,
+      "big": 833,
+      "small": 867
+    }
+  },
+  "8363334219_1789007891244_d53e8045": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 8,
+    "inputNew": 7,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910100010159",
+    "createdAt": "2026-09-10T02:38:11.244Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        144,
+        174,
+        177,
+        188,
+        184,
+        154,
+        162,
+        172,
+        172,
+        173
+      ],
+      "total": 1700,
+      "big": 833,
+      "small": 867
+    }
+  },
+  "8363334219_1789007995806_be42c165": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 7,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910100010160",
+    "createdAt": "2026-09-10T02:39:55.806Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        144,
+        174,
+        177,
+        188,
+        184,
+        154,
+        162,
+        172,
+        172,
+        173
+      ],
+      "total": 1700,
+      "big": 833,
+      "small": 867
+    }
+  },
+  "8363334219_1789008008642_422bdeda": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 5,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100010161",
+    "createdAt": "2026-09-10T02:40:08.643Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        144,
+        174,
+        177,
+        188,
+        184,
+        154,
+        162,
+        172,
+        172,
+        173
+      ],
+      "total": 1700,
+      "big": 833,
+      "small": 867
+    }
+  },
+  "8363334219_1789008786557_d882c49c": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 6,
+    "inputNew": 7,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100010174",
+    "createdAt": "2026-09-10T02:53:06.557Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789009077336_0cb830c1": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T02:57:57.336Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789012962334_9cb60533": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 8,
+    "inputNew": 6,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:02:42.334Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T04:03:05.044Z",
+    "result": null
+  },
+  "8363334219_1789012989499_019c0321": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 6,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:03:09.500Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T04:04:06.887Z",
+    "result": null
+  },
+  "8363334219_1789013053753_a9aff98a": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 4,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:04:13.753Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T04:05:06.899Z",
+    "result": null
+  },
+  "8363334219_1789013110595_1dcebeb8": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 4,
+    "inputNew": 7,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:05:10.595Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T04:06:34.207Z",
+    "result": null
+  },
+  "8363334219_1789013200214_143e2a10": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 8,
+    "inputNew": 6,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:06:40.215Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T04:06:42.068Z",
+    "result": null
+  },
+  "8363334219_1789013214395_b4117b17": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:06:54.396Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T04:07:33.339Z",
+    "result": null
+  },
+  "8363334219_1789013450590_277b4e96": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 5,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:10:50.590Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T04:11:14.642Z",
+    "result": null
+  },
+  "8363334219_1789013481035_a2e46e70": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 4,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:11:21.036Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789013709277_b46eaf3e": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 7,
+    "inputNew": 6,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:15:09.278Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T04:15:21.695Z",
+    "result": null
+  },
+  "8363334219_1789013875433_bb3b67a3": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 5,
+    "inputNew": 7,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:17:55.433Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T04:17:58.677Z",
+    "result": null
+  },
+  "8363334219_1789013883351_bc97f268": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 5,
+    "inputNew": 9,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:18:03.352Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T04:21:17.510Z",
+    "result": null
+  },
+  "8363334219_1789014405648_e8b1814e": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 7,
+    "inputNew": 9,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:26:45.648Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T04:27:15.884Z",
+    "result": null
+  },
+  "8363334219_1789014454001_fa78e2ff": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 7,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:27:34.001Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T04:27:41.970Z",
+    "result": null
+  },
+  "8363334219_1789014721014_425a4926": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 5,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:32:01.014Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T04:32:07.057Z",
+    "result": null
+  },
+  "8363334219_1789014735744_a5bb386e": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 7,
+    "inputNew": 9,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:32:15.746Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T04:33:12.215Z",
+    "result": null
+  },
+  "8363334219_1789014915921_69f86ce2": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-10T04:35:15.922Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789014923295_255adbcd": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 9,
+    "prediction": "BIG",
+    "predictedPeriod": null,
+    "createdAt": "2026-09-10T04:35:23.295Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789015036375_03a15d54": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 9,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:37:16.376Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789015042217_9230a2b7": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 8,
+    "inputNew": 7,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:37:22.217Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789015137928_6284bbde": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:38:57.928Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789015142049_698f3ceb": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:39:02.049Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789015145521_2068a4a8": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 5,
+    "inputNew": 9,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:39:05.521Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789015373488_8acbb598": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:42:53.488Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789015400397_f0de537e": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 8,
+    "inputNew": 7,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010166",
+    "createdAt": "2026-09-10T04:43:20.398Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789015408539_9592f9bf": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 6,
+    "inputNew": 7,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100010166",
+    "createdAt": "2026-09-10T04:43:28.539Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    },
+    "resolvedAt": "2026-09-10T07:23:04.841Z",
+    "result": null
+  },
+  "8363334219_1789025001901_891ab89c": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 9,
+    "prediction": "SMALL",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T07:23:21.902Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T07:24:07.464Z",
+    "result": null
+  },
+  "8363334219_1789025073252_15032f61": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910100010445",
+    "createdAt": "2026-09-10T07:24:33.252Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    },
+    "resolvedAt": "2026-09-10T07:25:08.320Z",
+    "result": {
+      "period": "20260910100010445",
+      "number": 7
+    }
+  },
+  "8363334219_1789025166324_1bc08620": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T07:26:06.325Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T07:27:00.686Z",
+    "result": null
+  },
+  "8363334219_1789025720005_b37ec867": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T07:35:20.005Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789025888243_99fe8c84": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T07:38:08.243Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789026056774_a343cda1": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T07:40:56.774Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        158,
+        178,
+        157,
+        184,
+        169,
+        180,
+        162,
+        166
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T07:41:09.789Z",
+    "result": null
+  },
+  "8363334219_1789026085790_7788eee2": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T07:41:25.790Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        194,
+        154,
+        160,
+        175,
+        156,
+        185,
+        169,
+        181,
+        159,
+        167
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789027011549_b2490ff8": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 4,
+    "inputNew": 7,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010462",
+    "createdAt": "2026-09-10T07:56:51.549Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        194,
+        154,
+        160,
+        175,
+        156,
+        185,
+        169,
+        181,
+        159,
+        167
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T07:57:10.807Z",
+    "result": null
+  },
+  "8363334219_1789027199815_0f33f3db": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 5,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103010462",
+    "createdAt": "2026-09-10T07:59:59.816Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        194,
+        154,
+        160,
+        175,
+        156,
+        185,
+        169,
+        181,
+        159,
+        167
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T08:01:29.002Z",
+    "result": {
+      "period": "20260910103010462",
+      "number": 5
+    }
+  },
+  "8363334219_1789027576331_33eaa605": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010482",
+    "createdAt": "2026-09-10T08:06:16.331Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        194,
+        155,
+        161,
+        172,
+        159,
+        185,
+        166,
+        181,
+        160,
+        167
+      ],
+      "total": 1700,
+      "big": 859,
+      "small": 841
+    },
+    "resolvedAt": "2026-09-10T08:07:03.261Z",
+    "result": {
+      "period": "20260910103010482",
+      "number": 8
+    }
+  },
+  "8363334219_1789027782082_b6c970fa": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 9,
+    "prediction": "SMALL",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T08:09:42.082Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        194,
+        154,
+        161,
+        171,
+        159,
+        184,
+        167,
+        180,
+        162,
+        168
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789028265907_0c0be476": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T08:17:45.907Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        194,
+        154,
+        161,
+        171,
+        159,
+        184,
+        167,
+        180,
+        162,
+        168
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789028307035_e3e7ef0f": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 5,
+    "inputNew": 6,
+    "prediction": "SMALL",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T08:18:27.036Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        194,
+        154,
+        161,
+        171,
+        159,
+        184,
+        167,
+        180,
+        162,
+        168
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    }
+  },
+  "8363334219_1789028540419_9218b9d7": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103010503",
+    "createdAt": "2026-09-10T08:22:20.419Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        194,
+        154,
+        161,
+        171,
+        159,
+        184,
+        167,
+        180,
+        162,
+        168
+      ],
+      "total": 1700,
+      "big": 861,
+      "small": 839
+    },
+    "resolvedAt": "2026-09-10T08:23:08.672Z",
+    "result": {
+      "period": "20260910103010503",
+      "number": 2
+    }
+  },
+  "8363334219_1789028607080_2eaeaad4": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 2,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010504",
+    "createdAt": "2026-09-10T08:23:27.080Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        194,
+        153,
+        163,
+        173,
+        159,
+        182,
+        167,
+        178,
+        162,
+        169
+      ],
+      "total": 1700,
+      "big": 858,
+      "small": 842
+    },
+    "resolvedAt": "2026-09-10T08:23:47.266Z",
+    "result": null
+  },
+  "8363334219_1789028637535_c92641b4": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "SMALL",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T08:23:57.535Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    },
+    "resolvedAt": "2026-09-10T08:24:08.467Z",
+    "result": null
+  },
+  "8363334219_1789028655497_81120dc8": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 2,
+    "inputNew": 4,
+    "prediction": "SMALL",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T08:24:15.497Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789047036921_f2df32cc": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910100010811",
+    "createdAt": "2026-09-10T13:30:36.921Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    },
+    "resolvedAt": "2026-09-10T13:30:57.665Z",
+    "result": {
+      "period": "20260910100010811",
+      "number": 2
+    }
+  },
+  "8363334219_1789047065608_02700f0e": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 2,
+    "inputNew": 5,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910100010812",
+    "createdAt": "2026-09-10T13:31:05.609Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    },
+    "resolvedAt": "2026-09-10T13:32:09.286Z",
+    "result": {
+      "period": "20260910100010812",
+      "number": 8
+    }
+  },
+  "8363334219_1789047188731_f4a499cb": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910100010814",
+    "createdAt": "2026-09-10T13:33:08.731Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789047201341_9b3fab68": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T13:33:21.341Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        194,
+        153,
+        163,
+        173,
+        159,
+        182,
+        167,
+        178,
+        162,
+        169
+      ],
+      "total": 1700,
+      "big": 858,
+      "small": 842
+    },
+    "resolvedAt": "2026-09-10T13:33:27.006Z",
+    "result": null
+  },
+  "8363334219_1789047214343_768cf282": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 4,
+    "inputNew": 7,
+    "prediction": "SMALL",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T13:33:34.343Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        164,
+        171,
+        159,
+        183,
+        168,
+        178,
+        161,
+        170
+      ],
+      "total": 1700,
+      "big": 860,
+      "small": 840
+    }
+  },
+  "8363334219_1789047384482_8a86ae5b": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 5,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T13:36:24.483Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        150,
+        164,
+        171,
+        159,
+        183,
+        168,
+        178,
+        161,
+        170
+      ],
+      "total": 1700,
+      "big": 860,
+      "small": 840
+    }
+  },
+  "8363334219_1789047399136_67903c24": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 4,
+    "inputNew": 7,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100010817",
+    "createdAt": "2026-09-10T13:36:39.137Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789048038733_ac661e58": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 6,
+    "inputNew": 8,
+    "prediction": "BIG",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T13:47:18.733Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789048050989_4a989d7a": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 7,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010828",
+    "createdAt": "2026-09-10T13:47:30.990Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        197,
+        151,
+        163,
+        170,
+        159,
+        183,
+        168,
+        177,
+        162,
+        170
+      ],
+      "total": 1700,
+      "big": 860,
+      "small": 840
+    }
+  },
+  "8363334219_1789048057773_cb8770f1": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 7,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010828",
+    "createdAt": "2026-09-10T13:47:37.773Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        151,
+        163,
+        169,
+        162,
+        184,
+        169,
+        175,
+        163,
+        168
+      ],
+      "total": 1700,
+      "big": 859,
+      "small": 841
+    }
+  },
+  "8363334219_1789048072095_5e2206ec": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 5,
+    "inputNew": 7,
+    "prediction": "BIG",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T13:47:52.095Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789048224624_578a07dd": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 6,
+    "inputNew": 8,
+    "prediction": "BIG",
+    "predictedPeriod": "",
+    "createdAt": "2026-09-10T13:50:24.624Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789048245569_f23310a5": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 5,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010831",
+    "createdAt": "2026-09-10T13:50:45.569Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        151,
+        163,
+        169,
+        162,
+        184,
+        169,
+        175,
+        163,
+        168
+      ],
+      "total": 1700,
+      "big": 859,
+      "small": 841
+    }
+  },
+  "8363334219_1789048292480_d01dc6bc": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 5,
+    "inputNew": 7,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100010832",
+    "createdAt": "2026-09-10T13:51:32.480Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789048300496_33911de1": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 5,
+    "inputNew": 7,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010832",
+    "createdAt": "2026-09-10T13:51:40.497Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        196,
+        151,
+        163,
+        169,
+        162,
+        184,
+        169,
+        175,
+        164,
+        167
+      ],
+      "total": 1700,
+      "big": 859,
+      "small": 841
+    }
+  },
+  "8363334219_1789055422729_d4de0989": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 0,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010951",
+    "createdAt": "2026-09-10T15:50:22.730Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        197,
+        151,
+        163,
+        169,
+        162,
+        184,
+        169,
+        175,
+        163,
+        167
+      ],
+      "total": 1700,
+      "big": 858,
+      "small": 842
+    },
+    "resolvedAt": "2026-09-10T15:51:05.822Z",
+    "result": {
+      "period": "20260910103010951",
+      "number": 1
+    }
+  },
+  "8363334219_1789055471813_ea233e8d": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 0,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010952",
+    "createdAt": "2026-09-10T15:51:11.813Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        199,
+        151,
+        163,
+        169,
+        160,
+        184,
+        170,
+        175,
+        164,
+        165
+      ],
+      "total": 1700,
+      "big": 858,
+      "small": 842
+    },
+    "resolvedAt": "2026-09-10T15:52:03.021Z",
+    "result": {
+      "period": "20260910103010952",
+      "number": 2
+    }
+  },
+  "8363334219_1789055528698_2fa7d1a6": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 2,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010953",
+    "createdAt": "2026-09-10T15:52:08.698Z",
+    "status": "WIN",
+    "stats": {
+      "counts": [
+        199,
+        150,
+        164,
+        169,
+        160,
+        184,
+        170,
+        175,
+        164,
+        165
+      ],
+      "total": 1700,
+      "big": 858,
+      "small": 842
+    },
+    "resolvedAt": "2026-09-10T15:53:05.836Z",
+    "result": {
+      "period": "20260910103010953",
+      "number": 2
+    }
+  },
+  "8363334219_1789055588901_b144b077": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 2,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010954",
+    "createdAt": "2026-09-10T15:53:08.901Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        199,
+        150,
+        165,
+        169,
+        160,
+        184,
+        169,
+        175,
+        164,
+        165
+      ],
+      "total": 1700,
+      "big": 857,
+      "small": 843
+    },
+    "resolvedAt": "2026-09-10T15:54:19.189Z",
+    "result": {
+      "period": "20260910103010954",
+      "number": 8
+    }
+  },
+  "8363334219_1789055662819_00cd2b7e": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010955",
+    "createdAt": "2026-09-10T15:54:22.819Z",
+    "status": "LOSE",
+    "stats": {
+      "counts": [
+        199,
+        150,
+        165,
+        169,
+        160,
+        184,
+        169,
+        175,
+        164,
+        165
+      ],
+      "total": 1700,
+      "big": 857,
+      "small": 843
+    },
+    "resolvedAt": "2026-09-10T15:55:07.867Z",
+    "result": {
+      "period": "20260910103010955",
+      "number": 8
+    }
+  },
+  "8363334219_1789055725453_b7388c5e": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 8,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010956",
+    "createdAt": "2026-09-10T15:55:25.453Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        199,
+        150,
+        165,
+        169,
+        160,
+        184,
+        169,
+        175,
+        165,
+        164
+      ],
+      "total": 1700,
+      "big": 857,
+      "small": 843
+    }
+  },
+  "8363334219_1789055745692_758fc997": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 8,
+    "inputNew": 3,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010956",
+    "createdAt": "2026-09-10T15:55:45.692Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        199,
+        150,
+        165,
+        169,
+        160,
+        184,
+        169,
+        175,
+        165,
+        164
+      ],
+      "total": 1700,
+      "big": 857,
+      "small": 843
+    }
+  },
+  "8363334219_1789055748631_a25f3ead": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010956",
+    "createdAt": "2026-09-10T15:55:48.631Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        199,
+        150,
+        165,
+        169,
+        160,
+        184,
+        169,
+        175,
+        165,
+        164
+      ],
+      "total": 1700,
+      "big": 857,
+      "small": 843
+    }
+  },
+  "8363334219_1789055752183_cc94f7a6": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 8,
+    "inputNew": 6,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010956",
+    "createdAt": "2026-09-10T15:55:52.184Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        199,
+        150,
+        165,
+        169,
+        160,
+        184,
+        169,
+        175,
+        165,
+        164
+      ],
+      "total": 1700,
+      "big": 857,
+      "small": 843
+    }
+  },
+  "8363334219_1789055764311_8a172166": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 9,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010957",
+    "createdAt": "2026-09-10T15:56:04.311Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        199,
+        150,
+        165,
+        169,
+        160,
+        184,
+        169,
+        175,
+        165,
+        164
+      ],
+      "total": 1700,
+      "big": 857,
+      "small": 843
+    }
+  },
+  "8363334219_1789055773271_0586866b": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103010957",
+    "createdAt": "2026-09-10T15:56:13.271Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        199,
+        150,
+        165,
+        169,
+        160,
+        183,
+        169,
+        175,
+        165,
+        165
+      ],
+      "total": 1700,
+      "big": 857,
+      "small": 843
+    }
+  },
+  "8363334219_1789060332480_1df01c90": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 5,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103011033",
+    "createdAt": "2026-09-10T17:12:12.481Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        199,
+        150,
+        165,
+        169,
+        160,
+        183,
+        169,
+        175,
+        165,
+        165
+      ],
+      "total": 1700,
+      "big": 857,
+      "small": 843
+    }
+  },
+  "8363334219_1789060338903_048e22ef": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 7,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103011033",
+    "createdAt": "2026-09-10T17:12:18.903Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        199,
+        152,
+        166,
+        171,
+        162,
+        185,
+        170,
+        175,
+        165,
+        165
+      ],
+      "total": 1710,
+      "big": 860,
+      "small": 850
+    }
+  },
+  "8363334219_1789060342578_747fbc4e": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 9,
+    "inputNew": 3,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103011033",
+    "createdAt": "2026-09-10T17:12:22.578Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        199,
+        152,
+        166,
+        171,
+        162,
+        185,
+        170,
+        175,
+        165,
+        165
+      ],
+      "total": 1710,
+      "big": 860,
+      "small": 850
+    }
+  },
+  "8363334219_1789060345853_ba62864c": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 6,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103011033",
+    "createdAt": "2026-09-10T17:12:25.853Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        199,
+        152,
+        166,
+        171,
+        162,
+        185,
+        170,
+        175,
+        165,
+        165
+      ],
+      "total": 1710,
+      "big": 860,
+      "small": 850
+    }
+  },
+  "8363334219_1789060349090_474bb0f3": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 0,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103011033",
+    "createdAt": "2026-09-10T17:12:29.090Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        199,
+        152,
+        166,
+        171,
+        162,
+        185,
+        170,
+        175,
+        165,
+        165
+      ],
+      "total": 1710,
+      "big": 860,
+      "small": 850
+    }
+  },
+  "8363334219_1789060352756_899becf4": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 7,
+    "inputNew": 9,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103011033",
+    "createdAt": "2026-09-10T17:12:32.756Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        199,
+        152,
+        166,
+        171,
+        162,
+        185,
+        170,
+        175,
+        165,
+        165
+      ],
+      "total": 1710,
+      "big": 860,
+      "small": 850
+    }
+  },
+  "8363334219_1789060359778_17f67549": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 6,
+    "inputNew": 8,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011033",
+    "createdAt": "2026-09-10T17:12:39.779Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789060363101_acdc11be": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 7,
+    "inputNew": 9,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011033",
+    "createdAt": "2026-09-10T17:12:43.102Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789060365836_b61a4fb7": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 7,
+    "inputNew": 2,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011033",
+    "createdAt": "2026-09-10T17:12:45.836Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789060658304_a56c7c3c": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 6,
+    "inputNew": 9,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011038",
+    "createdAt": "2026-09-10T17:17:38.305Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789060669411_4f128ed9": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 6,
+    "inputNew": 9,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011038",
+    "createdAt": "2026-09-10T17:17:49.411Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789060672496_d7346064": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 6,
+    "inputNew": 8,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011038",
+    "createdAt": "2026-09-10T17:17:52.497Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789060676338_037a29f4": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 1,
+    "inputNew": 1,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011038",
+    "createdAt": "2026-09-10T17:17:56.339Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789060678900_11343353": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 1,
+    "inputNew": 2,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011039",
+    "createdAt": "2026-09-10T17:17:58.900Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789060681350_e0e05f96": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 1,
+    "inputNew": 3,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910100011039",
+    "createdAt": "2026-09-10T17:18:01.351Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789060684664_acea5397": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 1,
+    "inputNew": 4,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011039",
+    "createdAt": "2026-09-10T17:18:04.665Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789060687446_7c5cad59": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 1,
+    "inputNew": 5,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011039",
+    "createdAt": "2026-09-10T17:18:07.446Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789060690392_20e562b7": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 1,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011039",
+    "createdAt": "2026-09-10T17:18:10.392Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789060693068_8d472cc3": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 1,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011039",
+    "createdAt": "2026-09-10T17:18:13.068Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789060696092_c49c6335": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 1,
+    "inputNew": 7,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011039",
+    "createdAt": "2026-09-10T17:18:16.093Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789060698884_e2d50e2b": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 1,
+    "inputNew": 8,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011039",
+    "createdAt": "2026-09-10T17:18:18.885Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789060701792_062bb0ab": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 1,
+    "inputNew": 9,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011039",
+    "createdAt": "2026-09-10T17:18:21.792Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789060706179_958d6ab8": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 2,
+    "inputNew": 0,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011039",
+    "createdAt": "2026-09-10T17:18:26.180Z",
+    "status": "PENDING",
+    "stats": {
+      "counts": [
+        143,
+        173,
+        177,
+        186,
+        183,
+        153,
+        163,
+        175,
+        172,
+        175
+      ],
+      "total": 1700,
+      "big": 838,
+      "small": 862
+    }
+  },
+  "8363334219_1789061150846_004544b3": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 2,
+    "inputNew": 0,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011046",
+    "createdAt": "2026-09-10T17:25:50.846Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061159655_018e6396": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 3,
+    "inputNew": 5,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011047",
+    "createdAt": "2026-09-10T17:25:59.656Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061169402_5a5c0744": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011047",
+    "createdAt": "2026-09-10T17:26:09.403Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061286232_d28bb599": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011049",
+    "createdAt": "2026-09-10T17:28:06.233Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061411773_5f24742c": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011051",
+    "createdAt": "2026-09-10T17:30:11.774Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061423633_bc2663a1": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 2,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103011051",
+    "createdAt": "2026-09-10T17:30:23.634Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061431363_239e9115": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 5,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011051",
+    "createdAt": "2026-09-10T17:30:31.364Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061438857_8e9479f5": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 4,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011051",
+    "createdAt": "2026-09-10T17:30:38.857Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061447837_65b37973": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011051",
+    "createdAt": "2026-09-10T17:30:47.837Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061454216_70a37a9d": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910100011051",
+    "createdAt": "2026-09-10T17:30:54.217Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061463178_38d82e8c": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 2,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100011052",
+    "createdAt": "2026-09-10T17:31:03.178Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061748385_f3ad4d48": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910100010165",
+    "createdAt": "2026-09-10T17:35:48.394Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061751464_fa6a7cfc": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 2,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910100010165",
+    "createdAt": "2026-09-10T17:35:51.465Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061754086_48c99ae4": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 2,
+    "inputNew": 8,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910100010165",
+    "createdAt": "2026-09-10T17:35:54.087Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061757902_75968552": {
+    "telegramId": "8363334219",
+    "game": "WINGO",
+    "inputOld": 2,
+    "inputNew": 9,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910100010165",
+    "createdAt": "2026-09-10T17:35:57.903Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061765722_18237cd0": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011050",
+    "createdAt": "2026-09-10T17:36:05.722Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061768706_ebca81ee": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 2,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103011056",
+    "createdAt": "2026-09-10T17:36:08.706Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789061981318_b4459709": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011056",
+    "createdAt": "2026-09-10T17:39:41.319Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789062004971_3d2f5dd3": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011059",
+    "createdAt": "2026-09-10T17:40:04.972Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789062008616_71861929": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 6,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011060",
+    "createdAt": "2026-09-10T17:40:08.616Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789062011183_508a4cfc": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 3,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011060",
+    "createdAt": "2026-09-10T17:40:11.183Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789062013786_ce21bbcd": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 1,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011060",
+    "createdAt": "2026-09-10T17:40:13.786Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789062016316_27a3a5a5": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 5,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011060",
+    "createdAt": "2026-09-10T17:40:16.316Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789062018856_c1981259": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 8,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011060",
+    "createdAt": "2026-09-10T17:40:18.856Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789062021525_43469ac9": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 9,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011060",
+    "createdAt": "2026-09-10T17:40:21.526Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789062023891_390bf2f2": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 6,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011060",
+    "createdAt": "2026-09-10T17:40:23.891Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789062026251_7017f90b": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 3,
+    "inputNew": 5,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011060",
+    "createdAt": "2026-09-10T17:40:26.251Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789062028716_e251a534": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 2,
+    "inputNew": 5,
+    "prediction": "BIG",
+    "predictedPeriod": "20260910103011060",
+    "createdAt": "2026-09-10T17:40:28.716Z",
+    "status": "PENDING"
+  },
+  "8363334219_1789062032207_372082ed": {
+    "telegramId": "8363334219",
+    "game": "TRX",
+    "inputOld": 1,
+    "inputNew": 4,
+    "prediction": "SMALL",
+    "predictedPeriod": "20260910103011060",
+    "createdAt": "2026-09-10T17:40:32.207Z",
+    "status": "PENDING"
+  }
+}

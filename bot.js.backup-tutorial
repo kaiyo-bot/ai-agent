@@ -1,0 +1,1415 @@
+require("dotenv").config();
+
+const { Telegraf, Markup } = require("telegraf");
+const axios = require("axios");
+const crypto = require("crypto");
+const fs = require("fs");
+const path = require("path");
+
+const BOT_TOKEN = process.env.BOT_TOKEN || "";
+const ADMIN_CHAT_ID = String(process.env.ADMIN_CHAT_ID || "");
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "@abcdxxxx";
+const API_BASE_URL = (process.env.API_BASE_URL || "https://6lotteryapi.com/api/webapi/").replace(/\/+$/, "") + "/";
+const WINGO_LIMIT = Math.max(1, Number(process.env.WINGO_HISTORY_LIMIT || 1700));
+const TRX_LIMIT = Math.max(1, Number(process.env.TRX_HISTORY_LIMIT || 1700));
+const UPDATE_INTERVAL_MS = Math.max(2000, Number(process.env.UPDATE_INTERVAL_MS || 8000));
+const DEVICE_ID = process.env.DEVICE_ID || "5dcab3e06db88a206975e91ea6ac7c87";
+const LANGUAGE = Number(process.env.LANGUAGE || 7);
+const COUNTRY_CODE = process.env.COUNTRY_CODE || "95";
+const DATA_PHONE = process.env.DATA_PHONE || "";
+const DATA_PASSWORD = process.env.DATA_PASSWORD || "";
+
+if (!BOT_TOKEN || !ADMIN_CHAT_ID) {
+  console.error("BOT_TOKEN and ADMIN_CHAT_ID are required. Copy .env.example to .env and fill them.");
+  process.exit(1);
+}
+
+const bot = new Telegraf(BOT_TOKEN);
+
+const FILES = {
+  allowed: path.join(__dirname, "data", "allowed_ids.json"),
+  users: path.join(__dirname, "data", "users.json"),
+  results: path.join(__dirname, "data", "results.json"),
+  predictions: path.join(__dirname, "data", "predictions.json"),
+  emojis: path.join(__dirname, "data", "emojis.json")
+};
+
+for (const f of Object.values(FILES)) {
+  fs.mkdirSync(path.dirname(f), { recursive: true });
+  if (!fs.existsSync(f)) fs.writeFileSync(f, "{}");
+}
+
+function loadJson(file, fallback) {
+  try { return JSON.parse(fs.readFileSync(file, "utf8")); }
+  catch { return fallback; }
+}
+function saveJson(file, value) {
+  fs.writeFileSync(file, JSON.stringify(value, null, 2));
+}
+
+let allowedIds = new Set((loadJson(FILES.allowed, { ids: [] }).ids || []).map(String));
+let users = loadJson(FILES.users, {});
+let resultStore = loadJson(FILES.results, { WINGO: [], TRX: [] });
+let predictions = loadJson(FILES.predictions, {});
+
+function persist() {
+  saveJson(FILES.allowed, { ids: [...allowedIds] });
+  saveJson(FILES.users, users);
+  saveJson(FILES.results, resultStore);
+  saveJson(FILES.predictions, predictions);
+}
+
+const EMOJI = {
+  login: "🔐",
+  wingo: "🟢",
+  trx: "🔴",
+  predict: "🎯",
+  win: "✅",
+  lose: "❌",
+  admin: "👑",
+  add: "➕",
+  remove: "➖",
+  broadcast: "📢",
+  allowed: "👥",
+  main: "🏠",
+  result: "📊",
+  stats: "📈",
+  search: "🔎",
+  success: "✨",
+  error: "🚫",
+  loading: "⏳",
+  next: "➡️",
+  input: "⌨️",
+  data: "💾",
+  target: "🎯"
+};
+
+const CUST_ID = {
+  login: process.env.CUSTOM_EMOJI_LOGIN || "6267008582294705964",
+  wingo: process.env.CUSTOM_EMOJI_WINGO || "",
+  trx: process.env.CUSTOM_EMOJI_TRX || "",
+  predict: process.env.CUSTOM_EMOJI_PREDICT || "",
+  win: process.env.CUSTOM_EMOJI_WIN || "",
+  lose: process.env.CUSTOM_EMOJI_LOSE || "",
+  admin: process.env.CUSTOM_EMOJI_ADMIN || "",
+  add: process.env.CUSTOM_EMOJI_ADD || "",
+  remove: process.env.CUSTOM_EMOJI_REMOVE || "",
+  broadcast: process.env.CUSTOM_EMOJI_BROADCAST || "",
+  allowed: process.env.CUSTOM_EMOJI_ALLOWED || "",
+  main: process.env.CUSTOM_EMOJI_MAIN || "",
+  result: process.env.CUSTOM_EMOJI_RESULT || "",
+  stats: process.env.CUSTOM_EMOJI_STATS || "",
+  search: process.env.CUSTOM_EMOJI_SEARCH || "",
+  success: process.env.CUSTOM_EMOJI_SUCCESS || "",
+  error: process.env.CUSTOM_EMOJI_ERROR || "",
+  loading: process.env.CUSTOM_EMOJI_LOADING || "",
+  next: process.env.CUSTOM_EMOJI_NEXT || "",
+  input: process.env.CUSTOM_EMOJI_INPUT || "",
+  data: process.env.CUSTOM_EMOJI_DATA || "",
+  target: process.env.CUSTOM_EMOJI_TARGET || ""
+};
+
+const savedEmojiIds = loadJson(FILES.emojis, {});
+for (const key of Object.keys(CUST_ID)) {
+  if (savedEmojiIds && savedEmojiIds[key]) {
+    CUST_ID[key] = String(savedEmojiIds[key]).trim();
+  }
+}
+
+function validCustomEmojiId(key) {
+  const id = String(CUST_ID[key] || "").trim();
+  return /^\d{5,30}$/.test(id) ? id : "";
+}
+
+function fallbackIcon(key) {
+  return EMOJI[key] || "";
+}
+
+function htmlIcon(key, fallback) {
+  const id = validCustomEmojiId(key);
+  const alt = fallback || fallbackIcon(key);
+  if (!id) return alt;
+  return `<tg-emoji emoji-id="${id}">${escapeHtml(alt)}</tg-emoji>`;
+}
+
+function icon(key) {
+  return htmlIcon(key);
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+function ensureTextEmoji(text) {
+  const value = String(text || "");
+  if (/^\s*(?:<tg-emoji\b|[\u{1F000}-\u{1FAFF}\u2600-\u27BF])/u.test(value)) {
+    return value;
+  }
+  if (/login|Login|Password|Phone Number/i.test(value)) return `${icon("login")} ${value}`;
+  if (/error|မအောင်မြင်|မမှန်|မရှိ|အသုံးပြုခွင့်မရှိ/i.test(value)) return `${icon("error")} ${value}`;
+  if (/WIN|အောင်မြင်|ပြီးပါပြီ|အသုံးပြုနိုင်ပါပြီ/i.test(value)) return `${icon("success")} ${value}`;
+  if (/LOSE/i.test(value)) return `${icon("lose")} ${value}`;
+  if (/Prediction|Predict|ခန့်မှန်း/i.test(value)) return `${icon("predict")} ${value}`;
+  if (/Period|result|Result/i.test(value)) return `${icon("result")} ${value}`;
+  return `${icon("success")} ${value}`;
+}
+
+async function reply(ctx, text, extra = {}) {
+  const finalText = ensureTextEmoji(text);
+  return ctx.reply(finalText, { parse_mode: "HTML", ...extra });
+}
+
+async function sendMessage(chatId, text, extra = {}) {
+  return bot.telegram.sendMessage(chatId, text, { parse_mode: "HTML", ...extra });
+}
+
+const BUTTON = {
+  login: { text: "Login", key: "login", style: "primary" },
+  wingo: { text: "Wingo 1 Min", key: "wingo", style: "primary" },
+  trx: { text: "TRX", key: "trx", style: "success" },
+  predict: { text: "Predict", key: "predict", style: "primary" },
+  win: { text: "WIN", key: "win", style: "success" },
+  lose: { text: "LOSE", key: "lose", style: "danger" },
+  admin: { text: "Admin Panel", key: "admin", style: "primary" },
+  add: { text: "Add User", key: "add", style: "success" },
+  remove: { text: "Remove User", key: "remove", style: "danger" },
+  broadcast: { text: "Broadcast", key: "broadcast", style: "primary" },
+  allowed: { text: "Allowed IDs", key: "allowed", style: "primary" },
+  main: { text: "Main Menu", key: "main", style: "primary" },
+  emoji: { text: "Emoji ပြင်ရန်", key: "admin", style: "primary" }
+};
+
+function replyButton(b) {
+  const out = {
+    text: `${fallbackIcon(b.key)} ${b.text}`,
+    style: b.style
+  };
+  const id = String(CUST_ID[b.key] || "").trim();
+  if (/^\d{5,30}$/.test(id)) {
+    out.icon_custom_emoji_id = id;
+    out.text = b.text;
+  }
+  return out;
+}
+
+function buttonText(b) {
+  return String(b.text);
+}
+
+function replyKeyboard(rows) {
+  return { reply_markup: { keyboard: rows.map(row => row.map(replyButton)), resize_keyboard: true, one_time_keyboard: false } };
+}
+
+function mainKeyboard(loggedIn, admin) {
+  if (!loggedIn) return replyKeyboard([[BUTTON.login]]);
+  const rows = [
+    [BUTTON.login],
+    [BUTTON.wingo],
+    [BUTTON.trx],
+    [BUTTON.predict]
+  ];
+  if (admin) rows.push([BUTTON.admin]);
+  return replyKeyboard(rows);
+}
+
+function emojiAdminKeyboard() {
+  const labels = {
+    login: "🔐 Login", wingo: "🟢 Wingo", trx: "🔴 TRX", predict: "🎯 Predict",
+    win: "✅ WIN", lose: "❌ LOSE", admin: "👑 Admin", add: "➕ Add",
+    remove: "➖ Remove", broadcast: "📢 Broadcast", allowed: "👥 Allowed",
+    main: "🏠 Main", result: "📊 Result", stats: "📈 Stats", search: "🔎 Search",
+    success: "✨ Success", error: "🚫 Error", loading: "⏳ Loading", next: "➡️ Next",
+    input: "⌨️ Input", data: "💾 Data", target: "🎯 Target"
+  };
+  const keys = Object.keys(labels);
+  const rows = [];
+  for (let i = 0; i < keys.length; i += 2) {
+    rows.push(
+      keys.slice(i, i + 2).map(key => ({
+        text: labels[key],
+        callback_data: `emoji_select:${key}`
+      }))
+    );
+  }
+  return { reply_markup: { inline_keyboard: rows } };
+}
+
+function adminKeyboard() {
+  return replyKeyboard([
+    [BUTTON.add, BUTTON.remove],
+    [BUTTON.broadcast, BUTTON.allowed],
+    [BUTTON.emoji],
+    [BUTTON.main]
+  ]);
+}
+
+function winLoseKeyboard(predId) {
+  const mk = (b, data) => {
+    const x = { text: b.text, callback_data: data, style: b.style };
+    const id = String(CUST_ID[b.key] || "").trim();
+    if (/^\d{5,30}$/.test(id)) x.icon_custom_emoji_id = id;
+    return x;
+  };
+  return {
+    reply_markup: {
+      inline_keyboard: [[
+        mk(BUTTON.win, `pred_win:${predId}`),
+        mk(BUTTON.lose, `pred_lose:${predId}`)
+      ]]
+    }
+  };
+}
+
+function apiHeaders(tokenHeader, token) {
+  return {
+    Authorization: `${tokenHeader || "Bearer "}${token || ""}`,
+    "Content-Type": "application/json;charset=UTF-8",
+    "Ar-Origin": "https://www.6win598.com",
+    Origin: "https://www.6win598.com",
+    Referer: "https://www.6win598.com/",
+    "User-Agent": "Mozilla/5.0 (Linux; Android 16) AppleWebKit/537.36 Chrome/140 Mobile Safari/537.36"
+  };
+}
+
+function generateSignature(data) {
+  const filtered = {};
+  Object.keys(data).sort().forEach(k => {
+    if (k === "signature" || k === "track" || k === "xosoBettingData") return;
+    const v = data[k];
+    if (v !== null && v !== "") filtered[k] = v === 0 ? 0 : v;
+  });
+  return crypto.createHash("md5").update(JSON.stringify(filtered)).digest("hex").toUpperCase();
+}
+
+async function login6Lottery(phone, password) {
+  // Normalize Myanmar phone number
+  // 09xxxxxxxxx -> 959xxxxxxxxx
+  // 9xxxxxxxxx  -> 959xxxxxxxxx
+  // 959xxxxxxxxx -> 959xxxxxxxxx
+  // 6Lottery website uses the local Myanmar phone format.
+  // Keep 09xxxxxxxxx exactly as entered.
+  // Website Login uses Myanmar phone with "95" prefix.
+  // Example: 09459006600 -> 9509459006600
+  const localPhone = String(phone || "").replace(/\D/g, "");
+
+  if (!/^09\d{7,9}$/.test(localPhone)) {
+    return {
+      ok: false,
+      stage: "login",
+      message: "Phone Number ပုံစံမမှန်ပါ။ 09xxxxxxxxx ပုံစံဖြင့်ထည့်ပါ။"
+    };
+  }
+
+  const username = "95" + localPhone;
+
+  const loginData = {
+    username,
+    pwd: String(password || ""),
+    phonetype: 1,
+    logintype: "mobile",
+    packId: "",
+    deviceId: DEVICE_ID,
+    language: 7,
+    random: crypto.randomBytes(16).toString("hex")
+  };
+
+  loginData.signature = generateSignature(loginData);
+  loginData.timestamp = Math.floor(Date.now() / 1000);
+
+  console.log("[LOGIN] Checking account:", username);
+  console.log("[LOGIN] Endpoint:", API_BASE_URL + "Login");
+
+  let response;
+
+  try {
+    response = await axios.post(
+      API_BASE_URL + "Login",
+      loginData,
+      {
+        headers: {
+          "Content-Type": "application/json;charset=UTF-8",
+          "Ar-Origin": "https://www.6win598.com",
+          Origin: "https://www.6win598.com",
+          Referer: "https://www.6win598.com/",
+          "User-Agent":
+            "Mozilla/5.0 (Linux; Android 16) AppleWebKit/537.36 Chrome/140 Mobile Safari/537.36"
+        },
+        timeout: 15000,
+        validateStatus: () => true
+      }
+    );
+  } catch (e) {
+    console.error("[LOGIN] Request error:", e.message);
+
+    return {
+      ok: false,
+      stage: "login",
+      message: "Login Server ကို ချိတ်ဆက်မရပါ။"
+    };
+  }
+
+  const res = response.data || {};
+
+  console.log("[LOGIN] HTTP:", response.status);
+  console.log("[LOGIN] code:", res.code);
+  console.log("[LOGIN] msg:", res.msg || "");
+
+  // API may return 0 or "0"
+  if (Number(res.code) !== 0 || !res.data) {
+    return {
+      ok: false,
+      stage: "login",
+      message: res.msg || "Wrong account or password"
+    };
+  }
+
+  const tokenHeader = res.data.tokenHeader || "Bearer ";
+  const token = res.data.token || "";
+
+  if (!token) {
+    return {
+      ok: false,
+      stage: "login",
+      message: "Login အောင်မြင်သော်လည်း Token မရပါ။"
+    };
+  }
+
+  const session = axios.create({
+    baseURL: API_BASE_URL,
+    timeout: 15000,
+    headers: apiHeaders(tokenHeader, token),
+    validateStatus: () => true
+  });
+
+  // IMPORTANT:
+  // Login အောင်မြင်ပြီးမှ Game ID ကိုစစ်မယ်
+  const userInfo = await getUserInfo(session);
+
+  if (!userInfo) {
+    return {
+      ok: false,
+      stage: "gameid",
+      message: "Account Login အောင်မြင်ပါသည်။ Game ID ကိုရယူ၍မရပါ။"
+    };
+  }
+
+  const gameId =
+    userInfo.userId ??
+    userInfo.userID ??
+    userInfo.id ??
+    userInfo.uid ??
+    userInfo.gameId ??
+    userInfo.gameID ??
+    userInfo.memberId ??
+    userInfo.memberID;
+
+  if (gameId === undefined || gameId === null || String(gameId).trim() === "") {
+    console.error("[LOGIN] GetUserInfo response:", JSON.stringify(userInfo));
+
+    return {
+      ok: false,
+      stage: "gameid",
+      message: "Account Login အောင်မြင်ပါသည်။ Game ID မတွေ့ပါ။"
+    };
+  }
+
+  console.log("[LOGIN] Login OK");
+  console.log("[LOGIN] Game ID:", String(gameId));
+
+  return {
+    ok: true,
+    session,
+    tokenHeader,
+    token,
+    userInfo,
+    gameId: String(gameId)
+  };
+}
+
+async function getUserInfo(session) {
+  const body = {
+    language: LANGUAGE,
+    random: crypto.randomBytes(16).toString("hex")
+  };
+  body.signature = generateSignature(body);
+  body.timestamp = Math.floor(Date.now() / 1000);
+  const r = await session.post("GetUserInfo", body);
+
+  console.log("[GAMEID] HTTP:", r.status);
+  console.log("[GAMEID] code:", r.data?.code);
+
+  if (Number(r.data?.code) === 0 && r.data?.data) {
+    return r.data.data;
+  }
+
+  console.error(
+    "[GAMEID] GetUserInfo failed:",
+    JSON.stringify(r.data || {})
+  );
+
+  return null;
+}
+
+const GAME = {
+  WINGO: { key: "WINGO", name: "WINGO 1MIN", typeId: 1 },
+  TRX: { key: "TRX", name: "TRX", typeId: 13 }
+};
+
+function extractResult(item) {
+  const period = String(item?.issueNumber ?? item?.period ?? item?.issue ?? "");
+  const raw = item?.number ?? item?.result ?? item?.num ?? item?.winNumber ?? "";
+  const number = Number(String(raw).replace(/[^\d]/g, "").slice(-1));
+  if (!period || !Number.isInteger(number) || number < 0 || number > 9) return null;
+  return { period, number };
+}
+
+async function fetchHistory(session, gameKey, pageSize = 100, full = true) {
+  const game = GAME[gameKey];
+  const limit = gameKey === "WINGO" ? WINGO_LIMIT : TRX_LIMIT;
+  const out = [];
+  const seen = new Set();
+
+  // TRX API may return fewer records than pageSize even when more pages exist.
+  // Use smaller pages for TRX and do NOT stop just because list.length < pageSize.
+  const actualPageSize = gameKey === "TRX" ? 10 : pageSize;
+  const maxPages = full ? Math.ceil(limit / actualPageSize) + 10 : 1;
+
+  for (let page = 1; page <= maxPages && out.length < limit; page++) {
+    const body = {
+      pageSize: actualPageSize,
+      pageNo: page,
+      typeId: game.typeId,
+      language: LANGUAGE,
+      random: crypto.randomBytes(16).toString("hex")
+    };
+
+    body.signature = generateSignature(body);
+    body.timestamp = Math.floor(Date.now() / 1000);
+
+    const r = await session.post("GetNoaverageEmerdList", body);
+
+    if (r.data?.code !== 0) {
+      console.error(`[DATA] ${gameKey} API error: ${r.data?.msg || "unknown"}`);
+      break;
+    }
+
+    const list = r.data?.data?.list || r.data?.data?.records || [];
+
+    if (!Array.isArray(list) || list.length === 0) {
+      if (gameKey === "TRX") {
+        console.log("[TRX DEBUG] code:", r.data?.code);
+        console.log("[TRX DEBUG] msg:", r.data?.msg);
+        console.log("[TRX DEBUG] data keys:", Object.keys(r.data?.data || {}));
+        console.log("[TRX DEBUG] data:", JSON.stringify(r.data?.data || {}).slice(0, 3000));
+      }
+
+      console.log(`[DATA] ${gameKey} page ${page}: empty`);
+      break;
+    }
+
+    let added = 0;
+
+    for (const item of list) {
+      const x = extractResult(item);
+
+      if (x && x.period && !seen.has(String(x.period))) {
+        seen.add(String(x.period));
+        out.push(x);
+        added++;
+      }
+
+      if (out.length >= limit) break;
+    }
+
+    console.log(
+      `[DATA] ${gameKey} page ${page}: ${list.length} returned, +${added}, total ${out.length}/${limit}`
+    );
+
+    // Only stop when the API gives no new records.
+    // Do NOT use list.length < pageSize because TRX may return partial pages.
+    if (added === 0) break;
+  }
+
+  return out;
+}
+
+
+// =========================================================
+// TRX HISTORY - DEDICATED API + PUBLIC FALLBACK
+// =========================================================
+
+async function fetchTRXApiHistory(session, limit = TRX_LIMIT) {
+  const records = [];
+  const wanted = Math.max(1, Number(limit) || 1700);
+
+  const pageSize = 10;
+  let pageNo = 1;
+  let totalPage = 1;
+
+  while (records.length < wanted && pageNo <= totalPage) {
+    try {
+      const body = {
+        pageSize,
+        pageNo,
+        typeId: 13,
+        language: 7,
+        random: crypto.randomBytes(16).toString("hex")
+      };
+
+      body.signature = generateSignature(body);
+      body.timestamp = Math.floor(Date.now() / 1000);
+
+      const r = await session.post(
+        "GetTRXNoaverageEmerdList",
+        body
+      );
+
+      if (r.data?.code !== 0) {
+        console.error(
+          `[TRX API] page ${pageNo} code=${r.data?.code} msg=${r.data?.msg}`
+        );
+        break;
+      }
+
+      const root = r.data?.data;
+      const games = root?.data?.gameslist || [];
+
+      totalPage = Number(root?.totalPage || totalPage);
+
+      const parsed = games
+        .map(extractResult)
+        .filter(Boolean);
+
+      records.push(...parsed);
+
+      console.log(
+        `[TRX API] page ${pageNo}/${totalPage} -> +${parsed.length} | total ${records.length}/${wanted}`
+      );
+
+      if (!games.length) break;
+
+      pageNo++;
+
+      // API ကို အရမ်းမြန်မြန်မပစ်အောင်
+      await new Promise(resolve => setTimeout(resolve, 80));
+
+    } catch (e) {
+      console.error(
+        `[TRX API] page ${pageNo} ERROR:`,
+        e.message
+      );
+      break;
+    }
+  }
+
+  return records.slice(0, wanted);
+}
+
+async function fetchTRXHistory(limit = TRX_LIMIT) {
+  const records = [];
+  const pageSize = 10;
+  let pageNo = 1;
+  let totalPage = 1;
+
+  while (records.length < limit && pageNo <= totalPage) {
+    try {
+      const body = {
+        pageSize,
+        pageNo,
+        typeId: 13,
+        language: 7,
+        random: crypto.randomBytes(16).toString("hex")
+      };
+
+      body.signature = generateSignature(body);
+      body.timestamp = Math.floor(Date.now() / 1000);
+
+      const r = await session.post(
+        "GetTRXNoaverageEmerdList",
+        body
+      );
+
+      const root = r.data?.data;
+      const games = root?.data?.gameslist || [];
+
+      totalPage = Number(root?.totalPage || totalPage);
+
+      const parsed = games
+        .map(extractResult)
+        .filter(Boolean);
+
+      records.push(...parsed);
+
+      console.log(
+        `[DATA] TRX page ${pageNo}: ${parsed.length} returned, +${parsed.length}, total ${Math.min(records.length, limit)}/${limit}`
+      );
+
+      if (!games.length) break;
+
+      pageNo++;
+
+      await new Promise(resolve => setTimeout(resolve, 100));
+    } catch (e) {
+      console.error(`[TRX] page ${pageNo} error:`, e.message);
+      break;
+    }
+  }
+
+  const result = records.slice(0, limit);
+
+  console.log(`[DATA] TRX updated: ${result.length}/${limit}`);
+
+  return result;
+}
+
+async function fetchLatestIssue(session, gameKey) {
+  const game = GAME[gameKey];
+  const endpoint = gameKey === "TRX" ? "GetTrxGameIssue" : "GetGameIssue";
+  const body = {
+    typeId: game.typeId,
+    language: LANGUAGE,
+    random: crypto.randomBytes(16).toString("hex")
+  };
+  body.signature = generateSignature(body);
+  body.timestamp = Math.floor(Date.now() / 1000);
+
+  const r = await session.post(endpoint, body);
+  if (r.data?.code !== 0) return null;
+  const d = r.data.data || {};
+  const period = d.issueNumber || d.predraw?.issueNumber || "";
+  return period ? String(period) : null;
+}
+
+const MIN_EXACT_MATCHES = 20;
+
+function predict(records, oldN, newN) {
+  const history = (Array.isArray(records) ? records : [])
+    .map(r => {
+      if (typeof r === "number") return Number.isInteger(r) && r >= 0 && r <= 9 ? r : null;
+      if (typeof r === "string") {
+        const n = Number(r);
+        return Number.isInteger(n) && n >= 0 && n <= 9 ? n : null;
+      }
+      const candidates = [r?.number, r?.result, r?.resultNumber, r?.numberValue, r?.openNumber, r?.openResult];
+      for (const x of candidates) {
+        const n = Number(x);
+        if (Number.isInteger(n) && n >= 0 && n <= 9) return n;
+      }
+      return null;
+    })
+    .filter(n => n !== null);
+
+  const total = history.length;
+
+  function calcStats(list) {
+    const counts = Array(10).fill(0);
+    for (const n of list) {
+      if (n >= 0 && n <= 9) counts[n]++;
+    }
+    const big = counts.slice(5).reduce((a, b) => a + b, 0);
+    const small = counts.slice(0, 5).reduce((a, b) => a + b, 0);
+    return { counts, total: list.length, big, small };
+  }
+
+  // ============================================================
+  // FULL DATA + OLD/NEW + EXACT TRANSITION ANALYSIS
+  // ============================================================
+
+  const exactResults = [];
+
+  // old -> new -> next
+  for (let i = 0; i < history.length - 2; i++) {
+    if (history[i] === oldN && history[i + 1] === newN) {
+      exactResults.push(history[i + 2]);
+    }
+  }
+
+  // new -> next
+  const afterNew = [];
+
+  for (let i = 0; i < history.length - 1; i++) {
+    if (history[i] === newN) {
+      afterNew.push(history[i + 1]);
+    }
+  }
+
+  // old -> next
+  const afterOld = [];
+
+  for (let i = 0; i < history.length - 1; i++) {
+    if (history[i] === oldN) {
+      afterOld.push(history[i + 1]);
+    }
+  }
+
+  // ------------------------------------------------------------
+  // 1. FULL HISTORY
+  // ------------------------------------------------------------
+  const overall = calcStats(history);
+
+  // ------------------------------------------------------------
+  // 2. RECENT HISTORY
+  // ------------------------------------------------------------
+  const recentSize = Math.min(300, history.length);
+  const recentHistory = history.slice(0, recentSize);
+  const recentStats = calcStats(recentHistory);
+
+  // ------------------------------------------------------------
+  // 3. OLD DIGIT FOLLOW-UP
+  // ------------------------------------------------------------
+  const oldStats = calcStats(afterOld);
+
+  // ------------------------------------------------------------
+  // 4. NEW DIGIT FOLLOW-UP
+  // ------------------------------------------------------------
+  const newStats = calcStats(afterNew);
+
+  // ------------------------------------------------------------
+  // 5. EXACT OLD -> NEW FOLLOW-UP
+  // ------------------------------------------------------------
+  const exactStats = calcStats(exactResults);
+
+  const bigRate = st =>
+    st.total > 0 ? st.big / st.total : 0.5;
+
+  const overallBig = bigRate(overall);
+  const recentBig = bigRate(recentStats);
+  const oldBig = bigRate(oldStats);
+  const newBig = bigRate(newStats);
+  const exactBig = bigRate(exactStats);
+
+  // ------------------------------------------------------------
+  // SIGNAL WEIGHTS
+  //
+  // Overall      = 35%
+  // Recent       = 25%
+  // Old digit    = 10%
+  // New digit    = 10%
+  // Exact pair   = 20% (only when enough samples exist)
+  // ------------------------------------------------------------
+
+  let score =
+    (overallBig * 0.35) +
+    (recentBig * 0.25) +
+    (oldBig * 0.10) +
+    (newBig * 0.10);
+
+  let level = 3;
+
+  // Exact old -> new signal is used only when
+  // there are enough historical examples.
+  if (exactResults.length >= MIN_EXACT_MATCHES) {
+    score += exactBig * 0.20;
+    level = 1;
+  } else {
+    // If exact pair sample is too small,
+    // redistribute its weight to the more reliable signals.
+    score =
+      (overallBig * 0.40) +
+      (recentBig * 0.30) +
+      (oldBig * 0.10) +
+      (newBig * 0.20);
+
+    if (afterNew.length >= MIN_EXACT_MATCHES) {
+      level = 2;
+    }
+  }
+
+  let prediction;
+
+  if (score > 0.5) {
+    prediction = "BIG";
+  } else if (score < 0.5) {
+    prediction = "SMALL";
+  } else {
+    prediction =
+      recentStats.big >= recentStats.small
+        ? "BIG"
+        : "SMALL";
+  }
+
+  return {
+    prediction,
+
+    level,
+
+    // Statistics are ALWAYS based on the full history.
+    stats: overall,
+
+    total,
+
+    // Full dataset used for prediction/statistics.
+    matched: overall.total,
+
+    // Number of exact old -> new -> next matches.
+    exactMatch: exactResults.length,
+
+    // Extra analysis data for debugging/output if needed.
+    signals: {
+      overall: {
+        total: overall.total,
+        big: overall.big,
+        small: overall.small,
+        bigPercent: +(overallBig * 100).toFixed(2)
+      },
+
+      recent: {
+        total: recentStats.total,
+        big: recentStats.big,
+        small: recentStats.small,
+        bigPercent: +(recentBig * 100).toFixed(2)
+      },
+
+      old: {
+        digit: oldN,
+        total: oldStats.total,
+        big: oldStats.big,
+        small: oldStats.small,
+        bigPercent: +(oldBig * 100).toFixed(2)
+      },
+
+      new: {
+        digit: newN,
+        total: newStats.total,
+        big: newStats.big,
+        small: newStats.small,
+        bigPercent: +(newBig * 100).toFixed(2)
+      },
+
+      exact: {
+        pair: `${oldN},${newN}`,
+        total: exactStats.total,
+        big: exactStats.big,
+        small: exactStats.small,
+        bigPercent: +(exactBig * 100).toFixed(2)
+      },
+
+      score: +(score * 100).toFixed(2)
+    }
+  };
+}
+
+function predictionMessage(gameKey, oldN, newN, pred, nextPeriod, totalData) {
+  const game = GAME?.[gameKey] || { name: gameKey };
+  const st = pred.stats || { counts: Array(10).fill(0), big: 0, small: 0, total: 0 };
+  const total = st.total || 0;
+  const pct = n => total > 0 ? ((n / total) * 100).toFixed(2) : "0.00";
+
+  let msg = `${icon("predict")} <b>AI Agent Predictor</b>\n`;
+  msg += `================\n`;
+  msg += `${icon(gameKey === "WINGO" ? "wingo" : "trx")}<b> 6 Lottery  — ${game.name}</b>\n\n`;
+  msg += `${icon("input")} Input old → new: <code>${oldN}, ${newN}</code>\n`;
+  msg += `${icon("search")} Lookup: ${oldN},${newN} (exact old→new)\n\n`;
+  msg += `${icon("data")} <b>Total Data: ${totalData}</b>\n\n`;
+  msg += `${icon("result")} <b>BIG (5–9):</b> ${st.big} (${pct(st.big)}%)\n`;
+  msg += `${icon("result")} <b>SMALL (0–4):</b> ${st.small} (${pct(st.small)}%)\n\n`;
+  msg += `${icon("stats")} <b>နံပါတ်အလိုက်ရလဒ်များ</b>\n`;
+
+  for (let n = 0; n <= 9; n++) {
+    msg += `${n}: ${st.counts[n]} (${pct(st.counts[n])}%)\n`;
+  }
+
+  msg += `\n${icon("target")} <b>Prediction: ${pred.prediction}</b>\n`;
+  msg += `Level: ${pred.level}\n`;
+  msg += `Matched Data: ${pred.matched}\n`;
+  msg += `Exact Match: ${pred.exactMatch}\n`;
+  msg += `\n${icon("next")} နောက်လာမည့်ပွဲစဉ်: <code>${nextPeriod}</code>\n\n`;
+  msg += `Period ပြီးဆုံးပါက WIN သို့မဟုတ် LOSE ကို ကိုယ်တိုင်နှိပ်ပါ။`;
+
+  return msg;
+}
+
+let updaterBusy = false;
+let collectorSession = null;
+
+async function ensureCollectorSession() {
+  if (collectorSession) return collectorSession;
+  if (!DATA_PHONE || !DATA_PASSWORD) return null;
+  try {
+    const r = await login6Lottery(DATA_PHONE, DATA_PASSWORD);
+    if (r.ok) {
+      collectorSession = r.session;
+      console.log("📡 Dedicated 6 Lottery data collector login OK");
+      return collectorSession;
+    }
+  } catch (e) {
+    console.error(`[DATA] collector login failed: ${e.message}`);
+  }
+  return null;
+}
+
+async function updateAllHistory() {
+  if (updaterBusy) return;
+  updaterBusy = true;
+
+  try {
+    let session = await ensureCollectorSession();
+    if (!session) {
+      const active = Object.values(users).find(u => u.sessionToken && u.sessionTokenHeader);
+      if (active) {
+        session = axios.create({
+          baseURL: API_BASE_URL,
+          timeout: 15000,
+          headers: apiHeaders(active.sessionTokenHeader, active.sessionToken),
+          validateStatus: () => true
+        });
+      }
+    }
+
+    if (session) {
+      try {
+        const wingoRecords = await fetchHistory(session, "WINGO", 100, true);
+        if (wingoRecords.length) {
+          resultStore.WINGO = wingoRecords.slice(0, WINGO_LIMIT);
+          persist();
+          console.log(`[DATA] WINGO updated: ${resultStore.WINGO.length}/${WINGO_LIMIT}`);
+        }
+      } catch (e) {
+        console.error(`[DATA] WINGO update failed: ${e.message}`);
+      }
+
+      try {
+        const trxApiRecords = await fetchTRXApiHistory(session, TRX_LIMIT);
+
+        if (trxApiRecords.length) {
+          const parsed = trxApiRecords
+            .map(extractResult)
+            .filter(Boolean);
+
+          console.log(
+            `[TRX API] Parsed ${parsed.length}/${trxApiRecords.length} records`
+          );
+
+          if (parsed.length) {
+            resultStore.TRX = parsed.slice(0, TRX_LIMIT);
+            persist();
+            console.log(
+              `[DATA] TRX updated: ${resultStore.TRX.length}/${TRX_LIMIT}`
+            );
+          }
+        } else {
+          console.log("[TRX API] No records returned");
+        }
+      } catch (e) {
+        console.error(`[DATA] TRX update failed: ${e.message}`);
+      }
+    }
+  } finally {
+    updaterBusy = false;
+  }
+}
+
+function isAdmin(id) { return String(id) === ADMIN_CHAT_ID; }
+function isAllowed(id) { return isAdmin(id) || allowedIds.has(String(id)); }
+
+function requireAllowed(ctx) {
+  const id = String(ctx.from.id);
+  if (!isAllowed(id)) {
+    reply(ctx, `${icon("error")} အသုံးပြုခွင့်မရှိပါ။\n\nAdmin ထံဆက်သွယ်ပါ ${ADMIN_USERNAME}`, mainKeyboard(false, false));
+    return false;
+  }
+  return true;
+}
+
+bot.start(async ctx => {
+  const id = String(ctx.from.id);
+  if (!users[id]) users[id] = { id, state: null, selectedGame: null };
+  persist();
+  await reply(ctx, 
+    `${icon("success")} <b>AI Agent Predictor</b>\n\n${icon("login")} Login ဝင်ပြီးမှ Bot ကို အသုံးပြုနိုင်ပါသည်။`,
+    mainKeyboard(!!users[id].sessionToken, isAdmin(id))
+  );
+});
+
+bot.hears(buttonText(BUTTON.login), async ctx => {
+  const id = String(ctx.from.id);
+  users[id] = { ...(users[id] || {}), id, state: "LOGIN_PHONE", selectedGame: users[id]?.selectedGame || null };
+  persist();
+  await reply(ctx, `${icon("input")} 6 Lottery <b>Phone Number</b> ထည့်ပါ။`);
+});
+
+bot.hears(buttonText(BUTTON.wingo), async ctx => {
+  if (!requireAllowed(ctx)) return;
+  const id = String(ctx.from.id);
+  if (!users[id]?.sessionToken) return reply(ctx, `${icon("login")} Login အရင်ဝင်ပါ။`, mainKeyboard(false, false));
+  users[id].selectedGame = "WINGO";
+  users[id].state = null;
+  persist();
+
+  try { await updateAllHistory(); } catch {}
+  const count = Array.isArray(resultStore.WINGO) ? resultStore.WINGO.length : 0;
+  await reply(ctx, `${icon("wingo")} WINGO 1MIN Result data (${count}/${WINGO_LIMIT}) ကို အသုံးပြုနေပါသည်။`, mainKeyboard(true, isAdmin(id)));
+});
+
+bot.hears(buttonText(BUTTON.trx), async ctx => {
+  if (!requireAllowed(ctx)) return;
+  const id = String(ctx.from.id);
+  if (!users[id]?.sessionToken) return reply(ctx, `${icon("login")} Login အရင်ဝင်ပါ။`, mainKeyboard(false, false));
+
+  users[id].selectedGame = "TRX";
+  users[id].state = null;
+  persist();
+
+  // Reply immediately — do NOT wait for history download
+  const count = Array.isArray(resultStore.TRX) ? resultStore.TRX.length : 0;
+
+  await reply(
+    ctx,
+    `${icon("trx")} TRX Result data (${count}/${TRX_LIMIT}) ကို အသုံးပြုနေပါသည်။`,
+    mainKeyboard(true, isAdmin(id))
+  );
+
+  // Update TRX history in background
+  setImmediate(() => {
+    updateAllHistory().catch(e => {
+      console.error(`[DATA] Background TRX update failed: ${e.message}`);
+    });
+  });
+});
+
+bot.hears(buttonText(BUTTON.predict), async ctx => {
+  if (!requireAllowed(ctx)) return;
+  const id = String(ctx.from.id);
+  const u = users[id];
+  if (!u?.sessionToken) return reply(ctx, `${icon("login")} Login အရင်ဝင်ပါ။`, mainKeyboard(false, false));
+  if (!u.selectedGame) return reply(ctx, `${icon("error")} Wingo 1 Min သို့မဟုတ် TRX ကို အရင်ရွေးပါ။`, mainKeyboard(true, isAdmin(id)));
+  u.state = "PREDICT_INPUT";
+  persist();
+  await reply(ctx, `${icon("input")} နောက်ဆုံး result နှစ်လုံးကို old → new <code>0,2</code> ပုံစံဖြင့်ထည့်ပါ။`);
+});
+
+bot.hears(buttonText(BUTTON.admin), async ctx => {
+  if (!isAdmin(ctx.from.id)) return reply(ctx, `${icon("error")} Admin only!`);
+  await reply(ctx, `${icon("admin")} <b>Admin Panel</b>\n\n${icon("target")} Select an action:`, adminKeyboard());
+});
+
+bot.hears(buttonText(BUTTON.emoji), async ctx => {
+  if (!isAdmin(ctx.from.id)) return;
+  const id = String(ctx.from.id);
+  if (!users[id]) users[id] = { id, state: null, selectedGame: null };
+  users[id].state = "ADMIN_EMOJI_SELECT";
+  persist();
+  return reply(ctx, `${icon("admin")} <b>Emoji ပြင်ရန်</b>\n\nပြင်ချင်တဲ့ Emoji ကို အောက်က Inline Button မှ ရွေးပါ။`, emojiAdminKeyboard());
+});
+
+bot.hears(buttonText(BUTTON.main), async ctx => {
+  const id = String(ctx.from.id);
+  users[id] = { ...(users[id] || {}), state: null };
+  persist();
+  await reply(ctx, `${icon("main")} Main Menu`, mainKeyboard(!!users[id].sessionToken, isAdmin(id)));
+});
+
+bot.hears(buttonText(BUTTON.add), async ctx => {
+  if (!isAdmin(ctx.from.id)) return;
+  users[String(ctx.from.id)].state = "ADMIN_ADD";
+  await reply(ctx, `${icon("add")} Telegram User ID ထည့်ပါ။`);
+});
+
+bot.hears(buttonText(BUTTON.remove), async ctx => {
+  if (!isAdmin(ctx.from.id)) return;
+  users[String(ctx.from.id)].state = "ADMIN_REMOVE";
+  await reply(ctx, `${icon("remove")} Remove လုပ်မယ့် Telegram User ID ထည့်ပါ။`);
+});
+
+bot.hears(buttonText(BUTTON.allowed), async ctx => {
+  if (!isAdmin(ctx.from.id)) return;
+  const ids = [...allowedIds];
+  const body = ids.length ? ids.map((x,i) => `${i+1}. \`${x}\``).join("\n") : "Empty";
+  await reply(ctx, `${icon("allowed")} <b>Allowed IDs</b>\n\n${body}\n\nTotal: ${ids.length}`, adminKeyboard());
+});
+
+bot.hears(buttonText(BUTTON.broadcast), async ctx => {
+  if (!isAdmin(ctx.from.id)) return;
+  users[String(ctx.from.id)].state = "ADMIN_BROADCAST";
+  await reply(ctx, `${icon("broadcast")} Broadcast လုပ်မယ့် Message ကို ပို့ပါ။`);
+});
+
+bot.on("callback_query", async ctx => {
+  const data = ctx.callbackQuery?.data || "";
+  
+  if (data.startsWith("emoji_select:")) {
+    if (!isAdmin(ctx.from.id)) return ctx.answerCbQuery("Admin only!");
+    const key = data.split(":")[1];
+    const u = users[String(ctx.from.id)] || (users[String(ctx.from.id)] = { id: String(ctx.from.id) });
+    u.state = `ADMIN_EMOJI_ID:${key}`;
+    persist();
+    await ctx.answerCbQuery();
+    return reply(ctx, `${icon("input")} <b>${key}</b> အတွက် Custom Emoji ID (နံပါတ်သီးသန့်) ပို့ပေးပါ။`);
+  }
+
+  const m = data.match(/^pred_(win|lose):(.+)$/);
+  if (!m) return ctx.answerCbQuery();
+  const predId = m[2];
+  const p = predictions[predId];
+  if (!p) return ctx.answerCbQuery("Prediction not found.", { show_alert: true });
+
+  if (String(ctx.from.id) !== String(p.telegramId)) {
+    return ctx.answerCbQuery("ဒီ Prediction ကို သင်မဖန်တီးထားပါ။", { show_alert: true });
+  }
+  if (p.status !== "PENDING") {
+    return ctx.answerCbQuery("ပြီးသား မှတ်တမ်းဖြစ်ပါတယ်။", { show_alert: true });
+  }
+
+  const u = users[String(ctx.from.id)];
+  let result = null;
+  try {
+    if (u?.sessionToken) {
+      const session = axios.create({
+        baseURL: API_BASE_URL,
+        timeout: 15000,
+        headers: apiHeaders(u.sessionTokenHeader, u.sessionToken),
+        validateStatus: () => true
+      });
+      const records = await fetchHistory(session, p.game, 100, false);
+      const found = records.find(x => String(x.period) === String(p.predictedPeriod));
+      if (found) result = found;
+    }
+  } catch {}
+
+  const status = m[1] === "win" ? "WIN" : "LOSE";
+  p.status = status;
+  p.resolvedAt = new Date().toISOString();
+  p.result = result;
+
+  if (u) {
+    u.state = "PREDICT_INPUT";
+    u.selectedGame = p.game;
+  }
+  persist();
+
+  const resultNumber = result?.number ?? "N/A";
+  await ctx.answerCbQuery(status);
+  await reply(ctx, 
+    `${status === "WIN" ? icon("win") : icon("lose")} <b>${status} မှတ်တင်ပြီးပါပြီ။</b>\n` +
+    `Period: \`${result?.period || p.predictedPeriod}\`\n` +
+    `Result Number: <b>${resultNumber}</b>\n\n` +
+    `နောက်ပွဲအတွက် နံပါတ်နှစ်လုံးကို old → new <code>0,2</code> ပုံစံဖြင့် ထည့်ပါ။`,
+    mainKeyboard(true, isAdmin(ctx.from.id))
+  );
+});
+
+bot.on("text", async ctx => {
+  const id = String(ctx.from.id);
+  const text = ctx.message.text.trim();
+  const u = users[id] || (users[id] = { id, state: null, selectedGame: null });
+
+  if (text.startsWith("/")) return;
+
+  if (u.state === "LOGIN_PHONE") {
+    u.pendingPhone = text.replace(/\D/g, "");
+    u.state = "LOGIN_PASSWORD";
+    persist();
+    return reply(ctx, `${icon("input")} Password ထည့်ပါ။`);
+  }
+
+  if (u.state === "LOGIN_PASSWORD") {
+    const phone = u.pendingPhone || "";
+    const password = text;
+    await reply(ctx, `${icon("loading")} 6 Lottery Login စစ်ဆေးနေပါသည်...`);
+    try {
+      const result = await login6Lottery(phone, password);
+      if (!result.ok) {
+        u.state = "LOGIN_PHONE";
+        delete u.pendingPhone;
+        persist();
+        return reply(ctx, `${icon("error")} Login မအောင်မြင်ပါ။\n${result.message}`);
+      }
+      // Login OK ဖြစ်ပြီးမှ Game ID ကိုစစ်
+      const gameId = String(
+        result.gameId ??
+        result.userInfo?.userId ??
+        result.userInfo?.userID ??
+        result.userInfo?.id ??
+        result.userInfo?.uid ??
+        ""
+      ).trim();
+
+      if (!gameId) {
+        u.state = "LOGIN_PHONE";
+        delete u.pendingPhone;
+        persist();
+
+        return reply(
+          ctx,
+          `${icon("error")} Account Login အောင်မြင်ပါသည်။\nGame ID မတွေ့ပါ။`,
+          mainKeyboard(false, false)
+        );
+      }
+
+      console.log(`[AUTH] Telegram: ${id} | Game ID: ${gameId}`);
+
+      // APPROVAL CHECK = GAME ID
+      if (!allowedIds.has(gameId) && !isAdmin(id)) {
+        u.state = null;
+        delete u.pendingPhone;
+        delete u.sessionToken;
+        delete u.sessionTokenHeader;
+        delete u.gameId;
+        persist();
+
+        return reply(
+          ctx,
+          `${icon("error")} <b>အသုံးပြုခွင့်မရှိပါ။</b>\n\n` +
+          `Game ID: <code>${escapeHtml(gameId)}</code>\n\n` +
+          `Admin ထံဆက်သွယ်ပါ ${escapeHtml(ADMIN_USERNAME)}`,
+          mainKeyboard(false, false)
+        );
+      }
+      u.sessionToken = result.token;
+      u.sessionTokenHeader = result.tokenHeader;
+      u.gameId = gameId;
+      u.phone = phone;
+      u.state = null;
+      persist();
+
+      try {
+        const session = result.session;
+        const [w, t] = await Promise.all([
+          fetchHistory(session, "WINGO", 100, true),
+          fetchTRXHistory(TRX_LIMIT)
+        ]);
+        if (w.length) resultStore.WINGO = w.slice(0, WINGO_LIMIT);
+        if (t.length) resultStore.TRX = t.slice(0, TRX_LIMIT);
+        persist();
+      } catch {}
+      return reply(ctx, `${icon("success")} Login အောင်မြင်ပါပြီ။\nGame ID: \`${gameId}\`\n\nBot အသုံးပြုနိုင်ပါပြီ။`, mainKeyboard(true, isAdmin(id)));
+    } catch (e) {
+      u.state = "LOGIN_PHONE";
+      persist();
+      return reply(ctx, `${icon("error")} Login API Error: ${e.message}`);
+    }
+  }
+
+  if (
+    u.state === "PREDICT_INPUT" ||
+    (u.sessionToken && u.selectedGame && /^\s*[0-9]\s*,\s*[0-9]\s*$/.test(text))
+  ) {
+    const match = text.match(/^\s*([0-9])\s*,\s*([0-9])\s*$/);
+    if (!match) return reply(ctx, `${icon("error")} Format မမှန်ပါ။ <code>0,2</code> ပုံစံဖြင့် ထည့်ပါ။`);
+    const oldN = Number(match[1]), newN = Number(match[2]);
+    const gameKey = u.selectedGame;
+    const records = resultStore[gameKey] || [];
+    if (records.length < 1) return reply(ctx, `${icon("loading")} ${GAME[gameKey].name} Data မရသေးပါ။ ခဏစောင့်ပြီး ပြန်စမ်းပါ။`);
+    const pred = predict(records, oldN, newN);
+
+    let nextPeriod = null;
+    try {
+      const session = axios.create({
+        baseURL: API_BASE_URL,
+        timeout: 15000,
+        headers: apiHeaders(u.sessionTokenHeader, u.sessionToken),
+        validateStatus: () => true
+      });
+      nextPeriod = await fetchLatestIssue(session, gameKey);
+    } catch {}
+
+    const predId = `${id}_${Date.now()}_${crypto.randomBytes(4).toString("hex")}`;
+    predictions[predId] = {
+      telegramId: id,
+      game: gameKey,
+      inputOld: oldN,
+      inputNew: newN,
+      prediction: pred.prediction,
+      predictedPeriod: nextPeriod,
+      createdAt: new Date().toISOString(),
+      status: "PENDING",
+      stats: pred.stats
+    };
+    u.state = null;
+    persist();
+
+    await reply(ctx, 
+      predictionMessage(gameKey, oldN, newN, pred, nextPeriod, records.length),
+      winLoseKeyboard(predId)
+    );
+    return;
+  }
+
+  if (isAdmin(id) && u.state && u.state.startsWith("ADMIN_EMOJI_ID:")) {
+    const key = u.state.split(":")[1];
+    const emojiId = text.trim();
+    if (!/^\d{5,30}$/.test(emojiId)) {
+      return reply(ctx, `${icon("error")} Emoji ID မမှန်ပါ။ နံပါတ်သီးသန့် ထည့်ပါ။`);
+    }
+    CUST_ID[key] = emojiId;
+    saveJson(FILES.emojis, CUST_ID);
+    u.state = null;
+    persist();
+    return reply(ctx, `${icon("success")} <b>${key}</b> Custom Emoji ID သိမ်းပြီးပါပြီ။\nID: <code>${emojiId}</code>`, adminKeyboard());
+  }
+
+  if (isAdmin(id) && u.state === "ADMIN_ADD") {
+    const target = text.replace(/\D/g, "");
+
+    if (!target) {
+      return reply(
+        ctx,
+        `${icon("error")} Valid Game ID ထည့်ပါ။`,
+        adminKeyboard()
+      );
+    }
+
+    allowedIds.add(target);
+    u.state = null;
+    persist();
+
+    return reply(
+      ctx,
+      `${icon("success")} <b>Game ID Approved ဖြစ်ပါပြီ။</b>\n\n` +
+      `Game ID: <code>${escapeHtml(target)}</code>`,
+      adminKeyboard()
+    );
+  }
+
+  if (isAdmin(id) && u.state === "ADMIN_REMOVE") {
+    const target = text.replace(/\D/g, "");
+
+    if (!target) {
+      return reply(
+        ctx,
+        `${icon("error")} Valid Game ID ထည့်ပါ။`,
+        adminKeyboard()
+      );
+    }
+
+    const existed = allowedIds.delete(target);
+    u.state = null;
+    persist();
+
+    return reply(
+      ctx,
+      existed
+        ? `${icon("success")} Game ID ဖယ်ပြီးပါပြီ။\n\nGame ID: <code>${escapeHtml(target)}</code>`
+        : `${icon("error")} ဒီ Game ID Approved List ထဲမှာ မရှိပါ။\n\nGame ID: <code>${escapeHtml(target)}</code>`,
+      adminKeyboard()
+    );
+  }
+
+  if (isAdmin(id) && u.state === "ADMIN_BROADCAST") {
+    u.state = null;
+    let ok = 0, fail = 0;
+    for (const target of [...allowedIds]) {
+      try {
+        await sendMessage(target, `${icon("broadcast")} ${escapeHtml(text)}`);
+        ok++;
+      } catch { fail++; }
+      await new Promise(r => setTimeout(r, 80));
+    }
+    persist();
+    return reply(ctx, `${icon("success")} Broadcast ပြီးပါပြီ။\n\n✅ Sent: ${ok}\n❌ Failed: ${fail}`, adminKeyboard());
+  }
+});
+
+bot.command("id", ctx => reply(ctx, `🆔 Telegram ID: \`${ctx.from.id}\``));
+
+process.once("SIGINT", () => { persist(); bot.stop("SIGINT"); });
+process.once("SIGTERM", () => { persist(); bot.stop("SIGTERM"); });
+
+bot.launch().then(() => {
+  console.log("🤖 6 Lottery Predictor Bot started.");
+  setInterval(() => updateAllHistory().catch(e => console.error(e.message)), UPDATE_INTERVAL_MS);
+  updateAllHistory().catch(() => {});
+}).catch(err => {
+  console.error("Bot launch failed:", err);
+  process.exit(1);
+});

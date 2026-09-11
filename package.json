@@ -1,0 +1,14 @@
+{
+  "name": "6lottery-predictor-bot",
+  "version": "1.0.0",
+  "description": "6 Lottery Wingo 1 Min / TRX live-history BIG/SMALL predictor Telegram bot",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "axios": "^1.20.0",
+    "dotenv": "^17.2.1",
+    "telegraf": "^4.16.3"
+  }
+}
