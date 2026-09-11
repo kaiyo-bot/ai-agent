@@ -496,11 +496,14 @@ function replyButton(b) {
     text: `${fallbackIcon(b.key)} ${b.text}`,
     style: b.style
   };
+
   const id = String(CUST_ID[b.key] || "").trim();
-  if (/^\d{5,30}$/.test(id)) {
+
+  if (/^\d{5,30}$/.test(id) && b.key !== "main") {
     out.icon_custom_emoji_id = id;
     out.text = b.text;
   }
+
   return out;
 }
 
